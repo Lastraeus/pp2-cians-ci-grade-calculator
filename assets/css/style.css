@@ -1,6 +1,27 @@
-
 * {
     margin: 0;
     padding: 0;
     border: none;
+}
+
+body {
+    background-color: #ea7600;
+}
+
+#grade-calc-section {
+    display: flexbox;
+    background-color: #ECECEC;
+    width: 90%;
+    margin: auto;
+}
+
+#intro-calc-content {
+    width: 90%;
+    margin: auto;
+}
+
+#expand-calc-rules {
+    width: 80%;
+    margin: auto;
+    background-color: #FFC180;
 }
