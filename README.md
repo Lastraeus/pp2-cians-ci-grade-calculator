@@ -1,108 +1,71 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Code Institute Project 2:
 
-Welcome Cian Lane,
+## __Purpose of the Project__
+To create a website that allows Code institute students to simulate what Final Grade they might get by either manually inputting potential Project grades, or randomly generating possible grades (In various configurations) to generate resulting Final Grade. Additional Useful information can be provided to the user such as a breakdown of what each project is worth and links to pre-existing “Days until” calculators, to see time left before deadlines in a more practical format.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## __Research__
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+__Audience Stories__
+“It can be difficult to figure out how much each project grade impacts the final grade at the end of the course”
+“I’d love to see a clearer breakdown of how my previous projects have impacted my potential final grade.”
 
-## Gitpod Reminders
+## __Features__
+1.	A main page featuring a title and into/explanation with the calculator.
+  *	Information about the calculator’s purpose including an expandable/retractable copy of the official assessment guide description of how it’s calculated. 
+  *	The Final Grade Calculator itself, with two primary display modes depending on screen size
+    *	Table Mode for Large Screens with potential grades selectable
+    *	Truncated table (media query and JavaScript to adjust table accordingly
+2. The Calculator will also be controllable by 4 different selections of randomisation which will be:
+  * Totally Random Grade Selection 
+  * Random Bounded by only combinations that result in a Final Pass Grade
+  * Random Bounded by only combinations that result in a Final merit Grade
+  * Random Bounded by only combinations that result in a Final distinction Grade
+3. The Page will clearly show what the final simulated result for the selected grading scenario.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+4.	Nav menu to each page: 
+  * Home/Intro + Grade Calculator Page (Two nav links to move around the page.)
+  * About/Useful Links Page
 
-`python3 -m http.server`
+5.	About/Useful Links Page/Contact Form
+  * Links to pre-existing Days Until calculator (originally planned to be constructed from scratch on this site, but scope creep was reigned in since this functionality has been done many times before.)
+  * Other Useful Links such as to Code Institute Website / Socials etc.
+  * Where to contact the site owner (Potential Contact submission Page)
+4.	A small footer with copyright and site info on all pages. Looks clean and unintrusive, but clear when read.
 
-A blue button should appear to click: _Make Public_,
+### __Color Scheme__
+A lighter color scheme with orange/light grey/ and white featured https://coolors.co/ea7600-ececec-717575-ffc180-ffffff 
+Site is responsive and adapts to smaller screen sizes while maintaining structure and clarity (even down to extremely small phone sizes.
 
-Another blue button should appear to click: _Open Browser_.
+### __Technology Used__
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+1.  HTML                Used to build markup stucture of the site.                  
+2.  CSS                 Used to provide both global and targated styling to the HTML
+3.  Javascript          Used to probide site interactivity.    
+4.  GitHub              Used as a repository for the project                        https://github.com/
+5.  GitPod              Used as the VDE of the project.                             https://www.gitpod.io/
+6.  Firefox             Used as main browser of the project (Browsing, Editing, Dev Tools, Screenshot capablilites)     https://www.mozilla.org/en-US/firefox/new/
+7.  Chrome              Used as alt browser of the project (Testing, Dev Tools)     https://www.google.com/intl/en_ie/chrome/
+8.  Grammarly           Used to proof this page.                                    https://app.grammarly.com
+9.  FontAwesome         Source of fonts used in website.                            https://fontawesome.com/
+10.  Unsplash            Source of copyright-free images used in website.            https://unsplash.com/
+11.  Pexels             Source of copyright-free images used in website.            https://www.pexels.com/
 
-A blue button should appear to click: _Make Public_,
+### __Existing Features__
 
-Another blue button should appear to click: _Open Browser_.
+### __Features Left to Implement__
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Testing
+### Validator Testing
+__HTML__
+__CSS__
+__Javascript__
+### Unfixed Bugs
 
-To log into the Heroku toolbelt CLI:
+## __Credits__
+### Content
+Misc reference 
+https://www.w3schools.com/css/
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Media
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
