@@ -8,6 +8,11 @@ body {
     background-color: #ea7600;
 }
 
+.center {
+    margin:auto;
+    width: fit-content;
+}
+
 #grade-calc-section {
     display: flexbox;
     background-color: #ECECEC;
