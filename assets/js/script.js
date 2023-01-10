@@ -11,7 +11,7 @@ function startTableGradeSystem() {
     function tableGradeRead() {
 
         gradeSelectors.forEach(grade => {
-            selectedResults.push(grade.value);
+            selectedResults.push(grade.value); // creates an array of the currently selected options
         })
         calculateResults(selectedResults);
     }
@@ -46,8 +46,11 @@ function startTableGradeSystem() {
     tableGradeRead();
     // initialises updating system (adds listeners etc)
     readTableGradeAfterChange();
+
+    /** upon page load, make lower Case version of resultStrings*/
     lowerCaseResults = toLowerCaseArray(resultStrings);
-    randomiseResults();
+
+    randomiseResultsInitial(); // sets listener for random button clicks
 }
 
 /** inputs array of strings to arrive at array of total points for each project */
@@ -67,7 +70,7 @@ function calculateResults(rawResults) {
 
 }
 
-/** change "pass" in selectedResults array from tableRead() to int 4 etc */
+/** change "pass" in an array from tableRead() to int 4 etc */
 function translateResultArray(wordResults) {
     let translatedResults = []
     for (let result of wordResults) {
@@ -119,9 +122,21 @@ function toLowerCaseArray(inArrayOfStrings) {
     return result;
 }
 
-function randomiseResults() {
-    
+function randomiseResultsInitial() {
+    let randomiseButton = document.querySelector("#random-button0");
+    // add click listener to each that resets the results array used by tableRead
+    randomiseButton.addEventListener("click", e => randomiseResults0())
 }
+    
+function randomiseResults0() {
+    newLowerCaseResults = []
+    for (i = 0; i < selectedResults.length; i++){
+        let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
+        newLowerCaseResults.push(lowerCaseResults[random0])
+    }
+    calculateResults(newLowerCaseResults);
+};
+    
 // Wait for the DOM to finish loading the run the initial system
 document.addEventListener("DOMContentLoaded", startTableGradeSystem());
 
