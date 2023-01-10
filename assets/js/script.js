@@ -2,17 +2,9 @@ let gradeTableData = []
 const tableBody = document.getElementById('grade-table-body');
 const gradeSelectors = document.querySelectorAll(".grade-select")
 
-function tableRead() {
-
-    gradeSelectors.forEach(grade => {
-        gradeTableData.push(grade.value);
-    })
-    console.log(gradeTableData)
-}
-
 /** starts the table reading and update systems */
 function startTableGradeSystem() {
-    function tableRead() {
+    function tableGradeRead() {
 
         gradeSelectors.forEach(grade => {
             gradeTableData.push(grade.value);
@@ -42,11 +34,11 @@ function startTableGradeSystem() {
 
             specificGradeId.addEventListener("change", e => {
                 gradeTableData = []
-                tableRead()
+                tableGradeRead()
             });
         }
     }
-    tableRead()
+    tableGradeRead()
     readTableGradeAfterChange()
 }
 
