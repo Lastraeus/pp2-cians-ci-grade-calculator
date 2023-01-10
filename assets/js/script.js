@@ -51,10 +51,13 @@ function calculateResults(rawResults) {
     let selectedResultPointsIntArray = translateResultArray(rawResults); // Array after turning "pass" to int 4 (for points per grade)
     let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntArray) // Array after multiplying creds per project by points Eg = [ 48, 32, 64, 128, 120 ]
     let sumTotalPoints = multipliedResultsArray.reduce((a, b) => {
-        return a + b; 
+        return a + b;
     });
 
     insertPointsToTable(selectedResultPointsIntArray);
+    insertTotalsToTable(multipliedResultsArray);
+    insertSumToPage(sumTotalPoints);
+    // insertResultToPage(sumTotalPoints);
     return;
 
 
@@ -107,8 +110,8 @@ function multiplyCreditsByCases(pointsArray) {
 document.addEventListener("DOMContentLoaded", startTableGradeSystem());
 
 function insertPointsToTable(pointsArray) {
-    pointsArrayToInsert = []
-    tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)")// Points Column
+    let pointsArrayToInsert = []
+    let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)") // Points Column
     let i = 0;
     tablePointsNodes.forEach(pointsCell => {
         pointsCell.innerText = pointsArray[i]; // sets each td text in column to equivlent int from pointsArray
@@ -116,10 +119,27 @@ function insertPointsToTable(pointsArray) {
     })
 }
 
-function insertResults() {
+function insertTotalsToTable(multipliedTotalsArray) {
 
+    let totalsArrayToInsert = []
+    let tableTotalsNodes = document.querySelectorAll("tr td:nth-of-type(5)") // Points Column
+    let i = 0;
+    tableTotalsNodes.forEach(totalsCell => {
+        totalsCell.innerText = multipliedTotalsArray[i]; // sets each td text in column to equivlent int from pointsArray
+        i++;
+    })
 
 }
+function insertSumToPage(inSum) {
+    sumSpan = document.querySelector("#total-result-points") // Span where Summed Points Are Displayed
+    sumSpan.innerText = inSum; // sets each td text in column to equivlent int from pointsArray
+}
+
+// function insertResultToPage(inSum) {
+//     resultP = document.querySelector("#displayed-result") // Span where Summed Points Are Displayed
+//     resultP.innerText = inSum; // sets each td text in column to equivlent int from pointsArray
+// }
+
 
 function expandOrContractDiv() {
 
