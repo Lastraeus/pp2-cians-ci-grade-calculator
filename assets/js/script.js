@@ -1,5 +1,6 @@
 let gradeTableData = []
 let selectedResults = []
+resultStrings = ["Pass", "Merit", "Distinction"];
 const tableBody = document.getElementById('grade-table-body');
 const gradeSelectors = document.querySelectorAll(".grade-select")
 
@@ -57,7 +58,7 @@ function calculateResults(rawResults) {
     insertPointsToTable(selectedResultPointsIntArray);
     insertTotalsToTable(multipliedResultsArray);
     insertSumToPage(sumTotalPoints);
-    // insertResultToPage(sumTotalPoints);
+    insertResultToPage(sumTotalPoints);
     return;
 
 
@@ -110,7 +111,6 @@ function multiplyCreditsByCases(pointsArray) {
 document.addEventListener("DOMContentLoaded", startTableGradeSystem());
 
 function insertPointsToTable(pointsArray) {
-    let pointsArrayToInsert = []
     let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)") // Points Column
     let i = 0;
     tablePointsNodes.forEach(pointsCell => {
@@ -120,8 +120,6 @@ function insertPointsToTable(pointsArray) {
 }
 
 function insertTotalsToTable(multipliedTotalsArray) {
-
-    let totalsArrayToInsert = []
     let tableTotalsNodes = document.querySelectorAll("tr td:nth-of-type(5)") // Points Column
     let i = 0;
     tableTotalsNodes.forEach(totalsCell => {
@@ -130,16 +128,22 @@ function insertTotalsToTable(multipliedTotalsArray) {
     })
 
 }
+
 function insertSumToPage(inSum) {
-    sumSpan = document.querySelector("#total-result-points") // Span where Summed Points Are Displayed
+    sumSpan = document.querySelector("#total-result-points") // Span where Summed Points Are displayed
     sumSpan.innerText = inSum; // sets each td text in column to equivlent int from pointsArray
 }
 
-// function insertResultToPage(inSum) {
-//     resultP = document.querySelector("#displayed-result") // Span where Summed Points Are Displayed
-//     resultP.innerText = inSum; // sets each td text in column to equivlent int from pointsArray
-// }
-
+function insertResultToPage(inSum) {
+    resultP = document.querySelector("#displayed-result") // Span where Final Grade Word is displayed
+    if (inSum <= 311) {
+        resultP.innerText = resultStrings[0]; 
+    } else if (inSum <= 383) {
+        resultP.innerText = resultStrings[1];
+    } else {
+        resultP.innerText = resultStrings[2];
+    }
+}
 
 function expandOrContractDiv() {
 
