@@ -26,8 +26,7 @@ function startTableGradeSystem() {
 
     /**
      * This class creates individualised grade ID selectors, 
-     * assigns unique change listeners to them which
-     * currently logs updated values to console
+     * assigns unique change listeners to them which is
      * necessary so each has a unique output upon change
      * */
     class GradeChangeInterpreter {
@@ -47,14 +46,21 @@ function startTableGradeSystem() {
     readTableGradeAfterChange()
 }
 
+/** inputs array of strings to arrive at array of total points for each project */
+function calculateResults(rawResults) {
+    let selectedResultPointsIntFormatArray = translateResultArray(rawResults); // Array after turning "pass" to int 4 (for points per grade)
+    let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntFormatArray) // Array after multiplying creds per project by points Eg = [ 48, 32, 64, 128, 120 ]
+    let sumTotalPoints = multipliedResultsArray.reduce((a, b) => {
+        return a + b;
+      });
+    console.log(sumTotalPoints)
+    return ;
 
 
+}
 
-// Wait for the DOM to finish loading the run the initial system
-document.addEventListener("DOMContentLoaded", startTableGradeSystem());
-
-/** change "pass" in selectedResults array to int 4 etc */
-function translateResultArray (wordResults) {
+/** change "pass" in selectedResults array from tableRead() to int 4 etc */
+function translateResultArray(wordResults) {
     let translatedResults = []
     for (let result of wordResults) {
         switch (result) {
@@ -70,26 +76,39 @@ function translateResultArray (wordResults) {
             default:
                 translatedResults.push("Error") // Unexpected/Error case
                 break
-
         }
     }
     return translatedResults;
 }
 
-function calculateResults(rawResults) {
-
-
-    let selectedResultsIntFormatArray = translateResultArray(rawResults)
-
-    console.log(selectedResultsIntFormatArray) // test
-
-    function multiplyCreditsByCases() {
-
+function multiplyCreditsByCases(pointsArray) {
+    let multipliedCreditsArray = []
+    for (let i = 0; i <= pointsArray.length; i++) {
+        if (i <= 2){
+            multipliedCreditsArray.push((pointsArray[i]) * 8) // First 3 Projects are 8 credits
+            continue;
+        } 
+        else if (i === 3){
+            multipliedCreditsArray.push((pointsArray[i]) * 16) // 3rd project is 16 credits 
+            continue;
+            } 
+        else if (i === 4){
+            multipliedCreditsArray.push((pointsArray[i]) * 20) // 4th project is 24 credits 
+            ;
+            }
+        else {
+            multipliedCreditsArray.push("Error") // Unexpected/Error case
+            
+        }
+    console.log(multipliedCreditsArray)
+    return multipliedCreditsArray;
     }
-
-
-
 }
+
+// Wait for the DOM to finish loading the run the initial system
+document.addEventListener("DOMContentLoaded", startTableGradeSystem());
+
+
 
 function insertResults() {
 
