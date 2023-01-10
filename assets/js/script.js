@@ -54,7 +54,7 @@ function startTableGradeSystem() {
     /** upon page load, make lower Case version of resultStrings*/
     lowerCaseResults = toLowerCaseArray(resultStrings);
 
-    randomiseResultsInitial(); // sets listener for random button clicks
+    randomiseResultsInitial(); // sets listener for random buttons being clicked
 }
 
 /** inputs array of strings to arrive at array of total points for each project */
@@ -141,7 +141,37 @@ function randomiseResultsInitial() {
     let randomiseButton3 = document.querySelector("#random-button3");
     randomiseButton3.addEventListener("click", e => randomiseResults3()) // Random Final Distinction Buttion
 }
-    
+
+function updateSelectors() {
+    gradeSelectors.forEach(grade => {
+        let gradeCell = grade.parentElement;
+        let newPointsCell = gradeCell.nextElementSibling
+        let newSelection = reverseTranslateResultArray(newPointsCell.innerText)
+        for (let i = 0; i < grade.options.length; ++i){
+        if (grade.options[i].text === newSelection)
+            grade.options[i].selected = true;
+        }
+        console.log(grade.value);
+        // grade.value = reversePointstoGrade(grade.value)
+    // grade.value = grade.querySelector("") 
+    });
+}
+
+function reverseTranslateResultArray(gradeValue) {
+        switch (gradeValue) {
+            case "4":
+                return "Pass" //Pass is worth 4 Points
+            case "6":
+                return "Merit" //Merit is worth 6 Points
+            case "8":
+                return "Distinction" //Distinction is worth 8 Points
+            default:
+                return "Error" // Unexpected/Error case
+        }
+}
+
+
+
 function randomiseResults0() {
     newLowerCaseResults = []
     for (i = 0; i < selectedResults.length; i++){
@@ -149,6 +179,7 @@ function randomiseResults0() {
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
     calculateResults(newLowerCaseResults);
+    updateSelectors()
 };
     
 function randomiseResults1() {
@@ -158,9 +189,10 @@ function randomiseResults1() {
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
     calculateResults(newLowerCaseResults);
-    if (!(resultP.innerText === "Pass")) {
+    if (!(resultP.innerText === "Pass")) { // if not a pass run again
         randomiseResults1()
     }
+    updateSelectors()
 };
     
 function randomiseResults2() {
@@ -170,9 +202,10 @@ function randomiseResults2() {
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
     calculateResults(newLowerCaseResults);
-    if (!(resultP.innerText === "Merit")) {
+    if (!(resultP.innerText === "Merit")) { // if not a merit run again
         randomiseResults2()
     }
+    updateSelectors()
 };
     
 function randomiseResults3() {
@@ -182,9 +215,10 @@ function randomiseResults3() {
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
     calculateResults(newLowerCaseResults);
-    if (!(resultP.innerText === "Distinction")) {
+    if (!(resultP.innerText === "Distinction")) { // if not a distinction run again
         randomiseResults3()
     }
+    updateSelectors()
 };
     
 // Wait for the DOM to finish loading the run the initial system
