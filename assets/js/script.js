@@ -1,29 +1,19 @@
 
 
 let gradeTableData = []
-
+const tableBody = document.getElementById('grade-table-body');
+const lineOneGrade = document.getElementById('grade1');
+const gradeSelectors = document.querySelectorAll(".grade-select")
 
 function defaultTable() {
 
 }
 //Store table values in gradeTableData object
-function readTableValues() {
-    let table = document.getElementById('grade-table-body');
-    let rows = table.children;
-    for (let row of rows) {
-        let projectLine = {}
+function readTableGrade() {
 
-        let cells = row.children;
-        projectLine.project = cells[0].textContent;
-        projectLine.credits = cells[1].textContent;
-        projectLine.grade = cells[2].textContent;
-        projectLine.points = cells[3].textContent;
-        projectLine.total = cells[4].textContent;
-        gradeTableData.push(projectLine);
-
-        console.log(gradeTableData)
-    }
 }
+
+
 
 function calculateResults() {
 
@@ -42,6 +32,20 @@ function insertHtmlToExpandedDiv() {
 }
 
 // Wait for the DOM to finish loading before running
-document.addEventListener("DOMContentLoaded", readTableValues())
+document.addEventListener("DOMContentLoaded", readTableGrade());
 
-readTableValues()
+class GradeInterpreter  {
+    constructor(gradeId){
+        let specificGrade = document.querySelector(`#${gradeId}`)
+        console.log(specificGrade)
+        specificGrade.addEventListener( "change", e => {
+        console.log(specificGrade.value);
+    } );
+   }
+
+ }
+
+ gradeSelectors.forEach(grade => {
+    new GradeInterpreter(grade.id);
+ })
+//https://www.fwait.com/how-to-trigger-select-change-event-in-javascript/
