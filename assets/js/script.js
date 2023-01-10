@@ -1,6 +1,7 @@
 let gradeTableData = []
 let selectedResults = []
-resultStrings = ["Pass", "Merit", "Distinction"];
+const resultStrings = ["Pass", "Merit", "Distinction"];
+let lowerCaseResults = [];
 const tableBody = document.getElementById('grade-table-body');
 const gradeSelectors = document.querySelectorAll(".grade-select")
 
@@ -42,9 +43,11 @@ function startTableGradeSystem() {
         }
     }
     // initial table read
-    tableGradeRead()
+    tableGradeRead();
     // initialises updating system (adds listeners etc)
-    readTableGradeAfterChange()
+    readTableGradeAfterChange();
+    lowerCaseResults = toLowerCaseArray(resultStrings);
+    randomiseResults();
 }
 
 /** inputs array of strings to arrive at array of total points for each project */
@@ -107,6 +110,18 @@ function multiplyCreditsByCases(pointsArray) {
     }
 }
 
+function toLowerCaseArray(inArrayOfStrings) {
+    let result = []
+    for (word of inArrayOfStrings) {
+        let resultWord = word.toLowerCase()
+        result.push(resultWord)
+    }
+    return result;
+}
+
+function randomiseResults() {
+    
+}
 // Wait for the DOM to finish loading the run the initial system
 document.addEventListener("DOMContentLoaded", startTableGradeSystem());
 
@@ -137,13 +152,15 @@ function insertSumToPage(inSum) {
 function insertResultToPage(inSum) {
     resultP = document.querySelector("#displayed-result") // Span where Final Grade Word is displayed
     if (inSum <= 311) {
-        resultP.innerText = resultStrings[0]; 
+        resultP.innerText = resultStrings[0];
     } else if (inSum <= 383) {
         resultP.innerText = resultStrings[1];
     } else {
         resultP.innerText = resultStrings[2];
     }
 }
+
+
 
 function expandOrContractDiv() {
 
