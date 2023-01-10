@@ -48,13 +48,14 @@ function startTableGradeSystem() {
 
 /** inputs array of strings to arrive at array of total points for each project */
 function calculateResults(rawResults) {
-    let selectedResultPointsIntFormatArray = translateResultArray(rawResults); // Array after turning "pass" to int 4 (for points per grade)
-    let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntFormatArray) // Array after multiplying creds per project by points Eg = [ 48, 32, 64, 128, 120 ]
+    let selectedResultPointsIntArray = translateResultArray(rawResults); // Array after turning "pass" to int 4 (for points per grade)
+    let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntArray) // Array after multiplying creds per project by points Eg = [ 48, 32, 64, 128, 120 ]
     let sumTotalPoints = multipliedResultsArray.reduce((a, b) => {
-        return a + b;
-      });
-    console.log(sumTotalPoints)
-    return ;
+        return a + b; 
+    });
+
+    insertPointsToTable(selectedResultPointsIntArray);
+    return;
 
 
 }
@@ -68,10 +69,10 @@ function translateResultArray(wordResults) {
                 translatedResults.push(4) //Pass is worth 4 Points
                 break
             case "merit":
-                translatedResults.push(6) //Pass is worth 6 Points
+                translatedResults.push(6) //Merit is worth 6 Points
                 break
             case "distinction":
-                translatedResults.push(8) //Pass is worth 8 Points
+                translatedResults.push(8) //Distinction is worth 8 Points
                 break
             default:
                 translatedResults.push("Error") // Unexpected/Error case
@@ -84,33 +85,39 @@ function translateResultArray(wordResults) {
 function multiplyCreditsByCases(pointsArray) {
     let multipliedCreditsArray = []
     for (let i = 0; i <= pointsArray.length; i++) {
-        if (i <= 2){
+        if (i <= 2) {
             multipliedCreditsArray.push((pointsArray[i]) * 8) // First 3 Projects are 8 credits
             continue;
-        } 
-        else if (i === 3){
+        } else if (i === 3) {
             multipliedCreditsArray.push((pointsArray[i]) * 16) // 3rd project is 16 credits 
             continue;
-            } 
-        else if (i === 4){
+        } else if (i === 4) {
             multipliedCreditsArray.push((pointsArray[i]) * 20) // 4th project is 24 credits 
             ;
-            }
-        else {
+        } else {
             multipliedCreditsArray.push("Error") // Unexpected/Error case
-            
         }
-    console.log(multipliedCreditsArray)
-    return multipliedCreditsArray;
+
+        console.log(multipliedCreditsArray) //test
+        return multipliedCreditsArray;
     }
 }
 
 // Wait for the DOM to finish loading the run the initial system
 document.addEventListener("DOMContentLoaded", startTableGradeSystem());
 
-
+function insertPointsToTable(pointsArray) {
+    pointsArrayToInsert = []
+    tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)")// Points Column
+    let i = 0;
+    tablePointsNodes.forEach(pointsCell => {
+        pointsCell.innerText = pointsArray[i]; // sets each td text in column to equivlent int from pointsArray
+        i++;
+    })
+}
 
 function insertResults() {
+
 
 }
 
