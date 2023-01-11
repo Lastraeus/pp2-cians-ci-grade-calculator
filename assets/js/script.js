@@ -1,57 +1,24 @@
 let selectedResults = []
 const resultStrings = ["Pass", "Merit", "Distinction"];
 let lowerCaseResults = [];
-const tableBody = document.getElementById('grade-table-body');
+const tableBody = document.querySelector("grade-table-body");
 const gradeSelectors = document.querySelectorAll(".grade-select")
 const sumSpan = document.querySelector("#total-result-points") // Span where Summed Points Are displayed
 const resultP = document.querySelector("#displayed-result") // Span where Final Grade Word is displayed
 var finalSum = sumSpan.innerText;
 var finalResult = resultP.innerText;
+const randomButtons = document.querySelectorAll(".random-input-buttons");
+var buttonsNotSet = false;
 
 /** starts the table reading and update systems */
 function startTableGradeSystem() {
-
-    function tableGradeRead() {
-
-        gradeSelectors.forEach(grade => {
-            selectedResults.push(grade.value); // creates an array of the currently selected options
-        })
-        calculateResults(selectedResults);
-    }
-
-    /**
-     * This function cycles through each node in the nodelist of "grade" selector elements
-     * and makes a new unique instance of GradeChangeInterpreter class from it's id attribute.
-     */
-    function readTableGradeAfterChange() {
-        gradeSelectors.forEach(grade => {
-            new GradeChangeInterpreter(grade.id);
-        })
-    }
-
-    /**
-     * This class creates individualised grade ID selectors, 
-     * assigns unique change listeners to them which is
-     * necessary so each has a unique output upon change
-     * */
-    class GradeChangeInterpreter {
-        constructor(gradeId) {
-            // add missing "#" to passed gradeId value
-            let specificGradeId = document.querySelector(`#${gradeId}`)
-            // add unique listener to each that resets the 
-            specificGradeId.addEventListener("change", e => {
-                selectedResults = []
-                tableGradeRead()
-            });
-        }
-    }
     // initial table read
     tableGradeRead();
     // initialises updating system (adds listeners etc)
     readTableGradeAfterChange();
     /** upon page load, make lower Case version of resultStrings*/
     lowerCaseResults = toLowerCaseArray(resultStrings);
-    randomiseResultsInitial(); // sets listener for random buttons being clicked
+    initializeRandomButtons(); // sets listener for random buttons being clicked
 }
 
 /** inputs array of strings to arrive at array of total points for each project */
@@ -67,6 +34,42 @@ function calculateResults(rawResults) {
     insertSumToPage(sumTotalPoints);
     insertResultToPage(sumTotalPoints);
     return;
+}
+
+function tableGradeRead() {
+
+    gradeSelectors.forEach(grade => {
+        selectedResults.push(grade.value); // creates an array of the currently selected options
+    })
+    calculateResults(selectedResults);
+}
+
+/**
+ * This function cycles through each node in the nodelist of "grade" selector elements
+ * and makes a new unique instance of GradeChangeInterpreter class from it's id attribute.
+ */
+function readTableGradeAfterChange() {
+    gradeSelectors.forEach(grade => {
+        new GradeChangeInterpreter(grade.id);
+    })
+}
+
+/**
+ * This class creates individualised grade ID selectors, 
+ * assigns unique change listeners to them which is
+ * necessary so each has a unique output upon change
+ * */
+class GradeChangeInterpreter {
+    constructor(gradeId) {
+        // add missing "#" to passed gradeId value
+        let specificGradeId = document.querySelector(`#${gradeId}`)
+
+        // add unique listener to each that resets the 
+        specificGradeId.addEventListener("change", e => {
+            selectedResults = []
+            tableGradeRead()
+        });
+    }
 }
 
 /** change "pass" in an array from tableRead() to int 4, etc */
@@ -119,21 +122,7 @@ function toLowerCaseArray(inArrayOfStrings) {
     return result;
 }
 
-function randomiseResultsInitial() {
-    // add click listener to each that resets the results array used by calculateResults()
 
-    let randomiseButton0 = document.querySelector("#random-button0");
-    randomiseButton0.addEventListener("click", e => randomiseResults0()) // Totally Randomise Buttion
-
-    let randomiseButton1 = document.querySelector("#random-button1");
-    randomiseButton1.addEventListener("click", e => randomiseResults1()) // Random Final Pass Buttion
-
-    let randomiseButton2 = document.querySelector("#random-button2");
-    randomiseButton2.addEventListener("click", e => randomiseResults2()) // Random Final Merit Buttion
-
-    let randomiseButton3 = document.querySelector("#random-button3");
-    randomiseButton3.addEventListener("click", e => randomiseResults3()) // Random Final Distinction Buttion
-}
 
 function updateSelectors() {
     gradeSelectors.forEach(grade => {
@@ -160,52 +149,62 @@ function reverseTranslateResult(gradeValue) {
     }
 }
 
-function randomiseResults0() {
-    newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++) {
-        let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
-        newLowerCaseResults.push(lowerCaseResults[random0])
-    }
-    calculateResults(newLowerCaseResults);
-    updateSelectors()
-};
 
-function randomiseResults1() {
-    newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++) {
-        let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
-        newLowerCaseResults.push(lowerCaseResults[random0])
-    }
-    calculateResults(newLowerCaseResults);
-    if (!(resultP.innerText === "Pass")) { // if not a pass run again
-        randomiseResults1()
-    }
-    updateSelectors()
-};
+function initializeRandomButtons() {
+    randomButtons.forEach(button => {
+        new randomButtonInterpreter(button.id);
+    });
+}
 
-function randomiseResults2() {
-    newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++) {
-        let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
-        newLowerCaseResults.push(lowerCaseResults[random0])
-    }
-    calculateResults(newLowerCaseResults);
-    if (!(resultP.innerText === "Merit")) { // if not a merit run again
-        randomiseResults2()
-    }
-    updateSelectors()
-};
+class randomButtonInterpreter {
 
-function randomiseResults3() {
+    constructor(button) {
+        // add missing "#" to passed buttonId value
+        let specificButtonNode = document.querySelector(`#${button}`)
+
+        // add unique listener to each that runs the relevant randomiser
+        specificButtonNode.addEventListener("click", e => {
+            let selectedButtonNumber = button.charAt(button.length - 1) //last number of id equals which function to run
+            // let whichRandomFunctionToRun = `randomiseResults(${selectedButtonNumber})`;
+            console.log(selectedButtonNumber)
+            // console.log(whichRandomFunctionToRun)
+            randomiseResults(selectedButtonNumber);
+        });
+
+    }
+}
+function randomiseResults(whichButton) {
+    console.log("The Value in radomise result is: ", whichButton)
     newLowerCaseResults = []
     for (i = 0; i < selectedResults.length; i++) {
         let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
     calculateResults(newLowerCaseResults);
-    if (!(resultP.innerText === "Distinction")) { // if not a distinction run again
-        randomiseResults3()
+
+    switch (whichButton) {
+        case "0":
+            break;
+        case "1":
+            if (!(resultP.innerText === "Pass")) { // if not a pass run again
+                console.log("case1")
+                randomiseResults("1")
+            }
+            break;
+        case "2":
+            if (!(resultP.innerText === "Merit")) { // if not a merit run again
+                console.log("case2")
+                randomiseResults("2")
+            }
+            break;
+        case "3":
+            if (!(resultP.innerText === "Distinction")) { // if not a distinction run again
+                console.log("case3")
+                randomiseResults("3")
+            }
+            break;
     }
+
     updateSelectors()
 };
 
@@ -244,4 +243,4 @@ function insertResultToPage(inSum) {
 }
 
 // Wait for the DOM to finish loading, then run the initial system
-document.addEventListener("DOMContentLoaded", startTableGradeSystem());
+document.addEventListener("DOMContentLoaded", startTableGradeSystem);
