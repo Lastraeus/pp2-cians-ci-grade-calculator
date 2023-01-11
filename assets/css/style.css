@@ -1,11 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Barlow&display=swap');
+
+/* General Section */
 * {
     margin: 0;
     padding: 0;
     border: none;
 }
 
+h1  {
+    font-family: 'Asap', sans-serif;
+    color: #ECECEC;
+}
+
 body {
     background-color: #ea7600;
+    font-family: Barlow, sans-serif;
 }
 
 .center {
@@ -21,6 +30,14 @@ body {
     border-radius: 2.5%;
     min-width: 280px;
 }
+
+
+/* Header Section & Nav Bar*/
+nav li {
+    display: inline;
+    list-style-type: none;
+}
+
 
 /* Grade Calc Section */
 #grade-calc-section {
@@ -96,12 +113,8 @@ body {
 }
 
 /* Useful Links Section */
-
-/* Nav Links */
-
-nav li {
-    display: inline;
-    list-style-type: none;
+#useful-links-section {
+    height: 600px;
 }
 
 /* Footer Bar */
