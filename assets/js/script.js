@@ -70,8 +70,6 @@ function calculateResults(rawResults) {
     insertSumToPage(sumTotalPoints);
     insertResultToPage(sumTotalPoints);
     return;
-
-
 }
 
 /** change "pass" in an array from tableRead() to int 4 etc */
@@ -111,8 +109,6 @@ function multiplyCreditsByCases(pointsArray) {
         } else {
             multipliedCreditsArray.push("Error") // Unexpected/Error case
         }
-
-        console.log(multipliedCreditsArray) //test
         return multipliedCreditsArray;
     }
 }
@@ -152,8 +148,6 @@ function updateSelectors() {
             grade.options[i].selected = true;
         }
         console.log(grade.value);
-        // grade.value = reversePointstoGrade(grade.value)
-    // grade.value = grade.querySelector("") 
     });
 }
 
@@ -220,9 +214,7 @@ function randomiseResults3() {
     }
     updateSelectors()
 };
-    
-// Wait for the DOM to finish loading the run the initial system
-document.addEventListener("DOMContentLoaded", startTableGradeSystem());
+
 
 function insertPointsToTable(pointsArray) {
     let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)") // Points Column
@@ -258,12 +250,12 @@ function insertResultToPage(inSum) {
     resultP.innerText
 }
 
-
-
 function expandOrContractDiv() {
-
 }
 
 function insertHtmlToExpandedDiv() {
-
 }
+
+    
+// Wait for the DOM to finish loading the run the initial system
+document.addEventListener("DOMContentLoaded", startTableGradeSystem());

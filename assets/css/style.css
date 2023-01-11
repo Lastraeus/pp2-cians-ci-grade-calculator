@@ -30,3 +30,8 @@ body {
     margin: auto;
     background-color: #FFC180;
 }
+
+.random-input-buttons {
+    background-color: #ffffff;
+    border: 2px solid #ea7600;
+}
