@@ -15,7 +15,6 @@ body {
 }
 
 /* Grade Calc Section */
-
 #grade-calc-section {
     background-color: #ECECEC;
     max-width: 60%;
@@ -115,8 +114,8 @@ footer {
 }
 
 .footer-links i {
-    font-size: 280%;
+    font-size: 500%;
     margin: 1%;
-    padding: 5%;
+    padding: 0 5%;
     color: #ECECEC;
 }

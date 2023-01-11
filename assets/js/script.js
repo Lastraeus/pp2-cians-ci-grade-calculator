@@ -49,10 +49,8 @@ function startTableGradeSystem() {
     tableGradeRead();
     // initialises updating system (adds listeners etc)
     readTableGradeAfterChange();
-
     /** upon page load, make lower Case version of resultStrings*/
     lowerCaseResults = toLowerCaseArray(resultStrings);
-
     randomiseResultsInitial(); // sets listener for random buttons being clicked
 }
 
