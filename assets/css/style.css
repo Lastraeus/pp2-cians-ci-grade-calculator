@@ -31,13 +31,40 @@ body {
     min-width: 280px;
 }
 
-
 /* Header Section & Nav Bar*/
-nav li {
-    display: inline;
-    list-style-type: none;
+#menu {
+    font-size: 120%;
+    letter-spacing: 4px;
+    display:flex;
+    justify-content: center;
+    background-color: #717575;
 }
 
+#menu,
+.logos { 
+/* mobile menu TODO */
+    line-height: 75px
+}
+
+#menu li {
+    
+    list-style-type: none;
+    margin: 0 1rem;
+}
+
+#menu a {
+    text-decoration: none;
+    border: 2px solid #ECECEC;
+    color: #ECECEC;
+    padding: 6px;
+}
+
+#menu a:hover,
+#menu a:focus {
+
+    border: 2px solid #ea7600;
+    color: #ea7600;
+}
 
 /* Grade Calc Section */
 #grade-calc-section {
