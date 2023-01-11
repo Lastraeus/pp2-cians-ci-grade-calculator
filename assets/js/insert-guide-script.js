@@ -42,7 +42,7 @@ let expandedHtmlBlock = `
     The maximum number of points available are 480.
 </p>
 <br>
-<table id="credit-explanation-table " class="center">
+<table id="credit-explanation-table" class="explanation-tables center">
     <thead>
         <th>Module</th>
         <th>Credit Points</th>
@@ -91,7 +91,7 @@ let expandedHtmlBlock = `
     </tbody>
 </table>
 <br>
-<table id="points-per-grade-table" class="center">
+<table id="points-per-grade-table" class="explanation-tables center">
     <thead>
         <th>Points Per Grade</th>
     </thead>
@@ -123,7 +123,7 @@ let expandedHtmlBlock = `
     </tbody>
 </table>
 <br>
-<table id="grade-bands-table" class="center">
+<table id="grade-bands-table" class="explanation-tables center">
     <thead>
     <th>Grade Bands</th>
     </thead>

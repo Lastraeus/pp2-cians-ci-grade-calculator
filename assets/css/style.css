@@ -7,7 +7,7 @@
     border: none;
 }
 
-h1  {
+h1 {
     font-family: 'Asap', sans-serif;
     color: #ECECEC;
 }
@@ -31,23 +31,29 @@ body {
     min-width: 280px;
 }
 
+p {
+    max-width: 260px;
+    /* Galaxy Fold */
+    margin: 0 auto;
+}
+
 /* Header Section & Nav Bar*/
 #menu {
     font-size: 120%;
     letter-spacing: 4px;
-    display:flex;
+    display: flex;
     justify-content: center;
     background-color: #717575;
 }
 
 #menu,
-.logos { 
-/* mobile menu TODO */
+.logos {
+    /* mobile menu TODO */
     line-height: 75px
 }
 
 #menu li {
-    
+
     list-style-type: none;
     margin: 0 1rem;
 }
@@ -87,7 +93,16 @@ body {
     border: 2px solid #ea7600;
 }
 
-/* Grace Calc Table */
+.explanation-tables {
+    text-align: left;
+}
+
+.explanation-tables th,
+.explanation-tables td {
+    padding: 0.5rem 1rem;
+}
+
+/* Final Grace Calculator Table */
 #grade-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -144,8 +159,39 @@ body {
     height: 600px;
 }
 
-/* Footer Bar */
+#useful-links-blurb,
+.link-blurbs {
+    margin: 1rem auto 0;
+}
 
+#useful-links-list li{
+    margin: 2rem;
+}
+
+#useful-links-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#useful-links-list li {
+    list-style-type: none;
+
+}
+
+#useful-links-list a {
+    border: 2px solid #ea7600;
+    color: #ea7600;
+    padding: 6px;
+    font-weight: bold;
+}
+
+#useful-links-list a:hover,
+#useful-links-list a:focus {
+    border: 2px solid #FFC180;
+    color: #FFC180;
+}
+
+/* Footer Bar */
 footer {
     margin-top: 2rem;
     height: 100px;
