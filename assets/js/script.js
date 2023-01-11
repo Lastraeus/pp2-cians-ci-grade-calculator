@@ -1,4 +1,3 @@
-let gradeTableData = []
 let selectedResults = []
 const resultStrings = ["Pass", "Merit", "Distinction"];
 let lowerCaseResults = [];
@@ -61,10 +60,10 @@ function startTableGradeSystem() {
 function calculateResults(rawResults) {
     let selectedResultPointsIntArray = translateResultArray(rawResults); // Array after turning "pass" to int 4 (for points per grade)
     let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntArray) // Array after multiplying creds per project by points Eg = [ 48, 32, 64, 128, 120 ]
-    var sumTotalPoints = multipliedResultsArray.reduce((a, b) => {
+    var sumTotalPoints = multipliedResultsArray.reduce((a, b) => { // Returns total points summed from previous array.
         return a + b;
     });
-
+    /** Insert all the arrays and figures back into the html table*/
     insertPointsToTable(selectedResultPointsIntArray);
     insertTotalsToTable(multipliedResultsArray);
     insertSumToPage(sumTotalPoints);
@@ -72,7 +71,7 @@ function calculateResults(rawResults) {
     return;
 }
 
-/** change "pass" in an array from tableRead() to int 4 etc */
+/** change "pass" in an array from tableRead() to int 4, etc */
 function translateResultArray(wordResults) {
     let translatedResults = []
     for (let result of wordResults) {
@@ -142,43 +141,40 @@ function updateSelectors() {
     gradeSelectors.forEach(grade => {
         let gradeCell = grade.parentElement;
         let newPointsCell = gradeCell.nextElementSibling
-        let newSelection = reverseTranslateResultArray(newPointsCell.innerText)
-        for (let i = 0; i < grade.options.length; ++i){
-        if (grade.options[i].text === newSelection)
-            grade.options[i].selected = true;
+        let newSelection = reverseTranslateResult(newPointsCell.innerText)
+        for (let i = 0; i < grade.options.length; ++i) {
+            if (grade.options[i].text === newSelection)
+                grade.options[i].selected = true;
         }
-        console.log(grade.value);
     });
 }
 
-function reverseTranslateResultArray(gradeValue) {
-        switch (gradeValue) {
-            case "4":
-                return "Pass" //Pass is worth 4 Points
-            case "6":
-                return "Merit" //Merit is worth 6 Points
-            case "8":
-                return "Distinction" //Distinction is worth 8 Points
-            default:
-                return "Error" // Unexpected/Error case
-        }
+function reverseTranslateResult(gradeValue) {
+    switch (gradeValue) {
+        case "4":
+            return "Pass" //Pass is worth 4 Points
+        case "6":
+            return "Merit" //Merit is worth 6 Points
+        case "8":
+            return "Distinction" //Distinction is worth 8 Points
+        default:
+            return "Error" // Unexpected/Error case
+    }
 }
-
-
 
 function randomiseResults0() {
     newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++){
+    for (i = 0; i < selectedResults.length; i++) {
         let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
     calculateResults(newLowerCaseResults);
     updateSelectors()
 };
-    
+
 function randomiseResults1() {
     newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++){
+    for (i = 0; i < selectedResults.length; i++) {
         let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
@@ -188,10 +184,10 @@ function randomiseResults1() {
     }
     updateSelectors()
 };
-    
+
 function randomiseResults2() {
     newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++){
+    for (i = 0; i < selectedResults.length; i++) {
         let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
@@ -201,10 +197,10 @@ function randomiseResults2() {
     }
     updateSelectors()
 };
-    
+
 function randomiseResults3() {
     newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++){
+    for (i = 0; i < selectedResults.length; i++) {
         let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
         newLowerCaseResults.push(lowerCaseResults[random0])
     }
@@ -214,7 +210,6 @@ function randomiseResults3() {
     }
     updateSelectors()
 };
-
 
 function insertPointsToTable(pointsArray) {
     let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)") // Points Column
@@ -250,12 +245,9 @@ function insertResultToPage(inSum) {
     resultP.innerText
 }
 
-function expandOrContractDiv() {
-}
+function expandOrContractDiv() {}
 
-function insertHtmlToExpandedDiv() {
-}
+function insertHtmlToExpandedDiv() {}
 
-    
-// Wait for the DOM to finish loading the run the initial system
+// Wait for the DOM to finish loading, then run the initial system
 document.addEventListener("DOMContentLoaded", startTableGradeSystem());
