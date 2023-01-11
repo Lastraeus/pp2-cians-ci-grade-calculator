@@ -14,13 +14,17 @@ body {
     text-align: center;
 }
 
-/* Grade Calc Section */
-#grade-calc-section {
+.content-sections {
     background-color: #ECECEC;
     max-width: 60%;
-    margin: auto;
+    margin: 30px auto;
     border-radius: 2.5%;
     min-width: 280px;
+}
+
+/* Grade Calc Section */
+#grade-calc-section {
+    max-width: fit-content;
 }
 
 #intro-calc-content {
@@ -90,6 +94,8 @@ body {
     border-bottom: 2px solid #ea7600;
     /*Bottom cell border highlight; */
 }
+
+/* Useful Links Section */
 
 /* Nav Links */
 
