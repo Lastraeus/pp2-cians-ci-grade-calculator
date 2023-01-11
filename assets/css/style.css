@@ -87,7 +87,9 @@ p {
     margin: auto;
     background-color: #FFC180;
 }
-
+#click-instruction {
+    text-decoration: underline;
+}
 .random-input-buttons {
     background-color: #ffffff;
     border: 2px solid #ea7600;

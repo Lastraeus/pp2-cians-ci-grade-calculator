@@ -34,10 +34,10 @@ let expandedHtmlBlock = `
 <br>
 <p>
     The five projects all contribute to your final grade.
-    <br>
+    <br><br>
     This is calculated from the points awarded for a pass/merit/distinction multiplied by the
     number of credit points per module.
-    <br>
+    <br><br>
     These are depicted in the table below.
     The maximum number of points available are 480.
 </p>
