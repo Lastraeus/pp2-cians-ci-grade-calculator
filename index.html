@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae0900deec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets\css\style.css">
     <title>Cian's Code Institute Final Grade Calculator</title>
 </head>
 
 <body>
     <header>
+        <!-- Main Header Logo -->
         <h1 class="logos center">
             Cian's Code Institute Final Grade Calculator
         </h1>
+        <!-- Nav Menu -->
         <nav>
-            <!-- Menu for wider screens -->
             <ul id="menu" class="center">
                 <li>
                     <a href="index.html" class="active">Final Grade Calculator</a>
@@ -25,7 +27,7 @@
                 </li>
             </ul>
     </header>
-
+    <!-- Main Final Grade Calculator Section of the site -->
     <section id="grade-calc-section">
         <div id="grade-calc-header" class="center">
             <h2 id="grade-calc-title">The Final Grade Calculator</h2>
@@ -35,6 +37,7 @@
                 Or hit the Randomise Button to generate different arrangements of grades.
             </p>
             <br>
+            <!-- Expandable Div (by clicking) Shows Official Calculation Rules -->
             <div id="expand-calc-rules">
                 <article id="assesment-quote">
                     <h2>
@@ -60,6 +63,7 @@
             </div>
         </div>
         <br>
+        <!-- Randomizer Buttons Section -->
         <div id="random-buttons-div" class="center">
             <br><br>
             <input type="button" value="Totally Randomise!" id="random-button0" class="center random-input-buttons">
@@ -68,11 +72,11 @@
             <br><br>
             <input type="button" value="Random Final Merit" id="random-button2" class="center random-input-buttons">
             <br><br>
-            <input type="button" value="Random Final Distinction" id="random-button3"
-                class="center random-input-buttons">
+            <input type="button" value="Random Final Distinction" id="random-button3" class="center random-input-buttons">
             <br><br>
         </div>
         <br>
+        <!-- Interactive Final Grade Calculator -->
         <div id="table-div" class="center">
             <table id="grade-table">
                 <thead>
@@ -152,6 +156,7 @@
                 </tbody>
             </table>
         </div>
+        <!-- Displayed Final Results -->
         <div id="results-div" class="center">
             <p id="result-text">
                 These Grades will give you a result of: <span id="total-result-points">240</span> points
@@ -163,7 +168,25 @@
         <br>
     </section>
 
+    <!-- Social Media Link(s) in footer -->
     <footer>
+        <ul class="footer-links">
+            <li>
+                <a href="https://github.com/Lastraeus" target="_blank" rel="noopener"
+                    aria-label="Visit my Github Page (opens in a new tab)">
+                    <i class="fa-brands fa-square-github"></i>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener"
+                    aria-label="Visit our Twitter page to see Elon Musk in action(opens in a new tab)"><i
+                        class="fab fa-twitter-square"></i></a>
+            </li>
+            <li>
+                <a href="https://youtube.com" target="_blank" rel="noopener"
+                    aria-label="Visit our YouTube page (opens in a new tab) to escape this reality"><i
+                        class="fab fa-youtube-square"></i></a>
+            </li>
+        </ul>
     </footer>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/insert-guide-script.js"></script>
