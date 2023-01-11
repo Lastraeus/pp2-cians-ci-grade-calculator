@@ -11,6 +11,7 @@ body {
 .center {
     margin: auto;
     width: fit-content;
+    text-align: center;
 }
 
 #grade-calc-section {
@@ -34,4 +35,9 @@ body {
 .random-input-buttons {
     background-color: #ffffff;
     border: 2px solid #ea7600;
+}
+
+nav li {
+    display: inline;
+    list-style-type: none;
 }
