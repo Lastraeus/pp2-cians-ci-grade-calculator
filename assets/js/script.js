@@ -1,43 +1,26 @@
 let selectedResults = []
 const resultStrings = ["Pass", "Merit", "Distinction"];
 let lowerCaseResults = [];
-const tableBody = document.querySelector("grade-table-body");
-const gradeSelectors = document.querySelectorAll(".grade-select")
-const sumSpan = document.querySelector("#total-result-points") // Span where Summed Points Are displayed
-const resultP = document.querySelector("#displayed-result") // Span where Final Grade Word is displayed
-var finalSum = sumSpan.innerText;
-var finalResult = resultP.innerText;
-const randomButtons = document.querySelectorAll(".random-input-buttons");
-var buttonsNotSet = false;
+let tableBody = document.querySelector("grade-table-body");
+let gradeSelectors = document.querySelectorAll(".grade-select")
+let sumSpan = document.querySelector("#total-result-points") // Span where Summed Points Are displayed
+let resultP = document.querySelector("#displayed-result") // Span where Final Grade Word is displayed
+let finalSum = sumSpan.innerText;
+let finalResult = resultP.innerText;
+let randomButtons = document.querySelectorAll(".random-input-buttons");
+let buttonsNotSet = false;
+let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)")
+let tableTotalsNodes = document.querySelectorAll("tr td:nth-of-type(5)");
 
 /** starts the table reading and update systems */
 function startTableGradeSystem() {
-    // initial table read
     tableGradeRead();
-    // initialises updating system (adds listeners etc)
     readTableGradeAfterChange();
-    /** upon page load, make lower Case version of resultStrings*/
     lowerCaseResults = toLowerCaseArray(resultStrings);
-    initializeRandomButtons(); // sets listener for random buttons being clicked
-}
-
-/** inputs array of strings to arrive at array of total points for each project */
-function calculateResults(rawResults) {
-    let selectedResultPointsIntArray = translateResultArray(rawResults); // Array after turning "pass" to int 4 (for points per grade)
-    let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntArray) // Array after multiplying creds per project by points Eg = [ 48, 32, 64, 128, 120 ]
-    var sumTotalPoints = multipliedResultsArray.reduce((a, b) => { // Returns total points summed from previous array.
-        return a + b;
-    });
-    /** Insert all the arrays and figures back into the html table*/
-    insertPointsToTable(selectedResultPointsIntArray);
-    insertTotalsToTable(multipliedResultsArray);
-    insertSumToPage(sumTotalPoints);
-    insertResultToPage(sumTotalPoints);
-    return;
+    initializeRandomButtons();
 }
 
 function tableGradeRead() {
-
     gradeSelectors.forEach(grade => {
         selectedResults.push(grade.value); // creates an array of the currently selected options
     })
@@ -55,13 +38,13 @@ function readTableGradeAfterChange() {
 }
 
 /**
- * This class creates individualised grade ID selectors, 
+ * This class creates individualised grade ID selectors (including the missing '#'), 
  * assigns unique change listeners to them which is
  * necessary so each has a unique output upon change
  * */
 class GradeChangeInterpreter {
     constructor(gradeId) {
-        // add missing "#" to passed gradeId value
+
         let specificGradeId = document.querySelector(`#${gradeId}`)
 
         // add unique listener to each that resets the 
@@ -70,6 +53,28 @@ class GradeChangeInterpreter {
             tableGradeRead()
         });
     }
+}
+/** 
+ * inputs array of strings to arrive at array of total points for each project
+ * Makes an array of values after turning "pass" to int 4 (for points per grade) etc
+ * Makes a new array after multiplying creds per project by points
+ * Returns total points summed from previous array.
+ * */
+function calculateResults(rawResults) {
+    let selectedResultPointsIntArray = translateResultArray(rawResults); 
+    let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntArray);
+    let sumTotalPoints = multipliedResultsArray.reduce((a, b) => { 
+        return a + b;
+    });
+    insertDataToTable(selectedResultPointsIntArray, multipliedResultsArray, sumTotalPoints);
+}
+
+/** Insert all the arrays and figures back into the html table*/
+function insertDataToTable(selectedResultPointsIntArray, multipliedResultsArray, sumTotalPoints) {
+    insertPointsToTable(selectedResultPointsIntArray);
+    insertTotalsToTable(multipliedResultsArray);
+    insertSumToPage(sumTotalPoints);
+    insertResultToPage(sumTotalPoints);
 }
 
 /** change "pass" in an array from tableRead() to int 4, etc */
@@ -122,8 +127,6 @@ function toLowerCaseArray(inArrayOfStrings) {
     return result;
 }
 
-
-
 function updateSelectors() {
     gradeSelectors.forEach(grade => {
         let gradeCell = grade.parentElement;
@@ -149,32 +152,28 @@ function reverseTranslateResult(gradeValue) {
     }
 }
 
-
 function initializeRandomButtons() {
     randomButtons.forEach(button => {
         new randomButtonInterpreter(button.id);
     });
 }
 
+/**
+ * add missing "#" to passed buttonId value
+ * add unique listener to each that runs the relevant randomiser
+ * last number of id equals which function to run
+ */
 class randomButtonInterpreter {
-
     constructor(button) {
-        // add missing "#" to passed buttonId value
-        let specificButtonNode = document.querySelector(`#${button}`)
-
-        // add unique listener to each that runs the relevant randomiser
+        let specificButtonNode = document.querySelector(`#${button}`);
         specificButtonNode.addEventListener("click", e => {
-            let selectedButtonNumber = button.charAt(button.length - 1) //last number of id equals which function to run
-            // let whichRandomFunctionToRun = `randomiseResults(${selectedButtonNumber})`;
-            console.log(selectedButtonNumber)
-            // console.log(whichRandomFunctionToRun)
+            let selectedButtonNumber = button.charAt(button.length - 1)
             randomiseResults(selectedButtonNumber);
         });
-
     }
 }
+
 function randomiseResults(whichButton) {
-    console.log("The Value in radomise result is: ", whichButton)
     newLowerCaseResults = []
     for (i = 0; i < selectedResults.length; i++) {
         let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
@@ -186,20 +185,17 @@ function randomiseResults(whichButton) {
         case "0":
             break;
         case "1":
-            if (!(resultP.innerText === "Pass")) { // if not a pass run again
-                console.log("case1")
+            if (!(resultP.innerText === "Pass")) {
                 randomiseResults("1")
             }
             break;
         case "2":
-            if (!(resultP.innerText === "Merit")) { // if not a merit run again
-                console.log("case2")
+            if (!(resultP.innerText === "Merit")) {
                 randomiseResults("2")
             }
             break;
         case "3":
-            if (!(resultP.innerText === "Distinction")) { // if not a distinction run again
-                console.log("case3")
+            if (!(resultP.innerText === "Distinction")) {
                 randomiseResults("3")
             }
             break;
@@ -208,27 +204,28 @@ function randomiseResults(whichButton) {
     updateSelectors()
 };
 
+/**sets each td text in points column to equivlent int from pointsArray */
 function insertPointsToTable(pointsArray) {
-    let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)") // Points Column
     let i = 0;
     tablePointsNodes.forEach(pointsCell => {
-        pointsCell.innerText = pointsArray[i]; // sets each td text in column to equivlent int from pointsArray
+        pointsCell.innerText = pointsArray[i];
         i++;
     })
 }
-
+/**sets each td text in totals column to equivlent int from multipliedTotalsArray */
 function insertTotalsToTable(multipliedTotalsArray) {
-    let tableTotalsNodes = document.querySelectorAll("tr td:nth-of-type(5)") // Points Column
     let i = 0;
     tableTotalsNodes.forEach(totalsCell => {
-        totalsCell.innerText = multipliedTotalsArray[i]; // sets each 
+        totalsCell.innerText = multipliedTotalsArray[i];
         i++;
     })
-
 }
 
+/** 
+ * inserts final sum to page
+ * */
 function insertSumToPage(inSum) {
-    sumSpan.innerText = inSum; // sets final sum
+    sumSpan.innerText = inSum;
 }
 
 function insertResultToPage(inSum) {
@@ -242,5 +239,8 @@ function insertResultToPage(inSum) {
     resultP.innerText
 }
 
-// Wait for the DOM to finish loading, then run the initial system
+
+/** 
+ * Wait for the DOM to finish loading, then run the initial system
+ * */
 document.addEventListener("DOMContentLoaded", startTableGradeSystem);
