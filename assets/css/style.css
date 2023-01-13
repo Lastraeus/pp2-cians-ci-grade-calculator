@@ -5,16 +5,24 @@
     margin: 0;
     padding: 0;
     border: none;
+
+    /* colors as per https://coolors.co/ea7600-ececec-717575-ffc180-ffffff */
+    --color-princeton-orange: #ea7600;
+    --color-cultured: #ECECEC;
+    --color-mellow-apricot: #FFC180;
+    --color-mellow-apricot-darker: #ca9d6d;
+    --color-nickle: #717575;
+    --color-white: #FFFFFF;
 }
 
 h1 {
     font-family: 'Asap', sans-serif;
-    color: #ECECEC;
+    color: var(--color-cultured);
 }
 
 body {
-    background-color: #ea7600;
-    font-family: Barlow, sans-serif;
+    background-color: var(--color-princeton-orange);
+    font-family: "Barlow", sans-serif;
 }
 
 .center {
@@ -24,7 +32,7 @@ body {
 }
 
 .content-sections {
-    background-color: #ECECEC;
+    background-color: var(--color-cultured);
     max-width: 60%;
     margin: 30px auto;
     border-radius: 2.5%;
@@ -43,7 +51,7 @@ p {
     letter-spacing: 4px;
     display: flex;
     justify-content: center;
-    background-color: #717575;
+    background-color: var(--color-nickle);
 }
 
 #menu,
@@ -60,16 +68,16 @@ p {
 
 #menu a {
     text-decoration: none;
-    border: 2px solid #ECECEC;
-    color: #ECECEC;
+    border: 2px solid var(--color-cultured);
+    color: var(--color-cultured);
     padding: 6px;
 }
 
 #menu a:hover,
 #menu a:focus {
 
-    border: 2px solid #ea7600;
-    color: #ea7600;
+    border: 2px solid var(--color-princeton-orange);
+    color: var(--color-princeton-orange);
 }
 
 /* Grade Calc Section */
@@ -83,18 +91,14 @@ p {
 }
 
 #expand-calc-rules {
+    cursor:pointer;
     width: 80%;
     margin: auto;
-    background-color: #FFC180;
+    background-color: var(--color-mellow-apricot);
 }
 
 #click-instruction {
     text-decoration: underline;
-}
-
-.random-input-buttons {
-    background-color: #ffffff;
-    border: 2px solid #ea7600;
 }
 
 .explanation-tables {
@@ -104,6 +108,26 @@ p {
 .explanation-tables th,
 .explanation-tables td {
     padding: 0.5rem 1rem;
+}
+
+/* Randomizer Buttons */
+
+.random-input-buttons {
+    cursor:pointer;
+    text-decoration:;
+    outline: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.2rem 1rem;
+	border: none;
+    color: var(--color-white);
+    background-color: var(--color-mellow-apricot);
+    box-shadow: 0.4rem 0.4rem 0 var(--color-mellow-apricot-darker);
+}
+
+.random-input-buttons:active {
+	transform: translateX(0.2rem) translateY(0.2rem);
+	box-shadow: 0.2rem 0.2rem 0 var(--color-mellow-apricot-darker);
 }
 
 /* Final Grace Calculator Table */
@@ -122,8 +146,8 @@ p {
 }
 
 #grade-table thead tr {
-    background-color: #ea7600;
-    color: #ffffff;
+    background-color: var(--color-princeton-orange);
+    color: var(--color-white);
     text-align: left;
     /* Algin table headers with tr content */
     font-weight: bold;
@@ -135,26 +159,28 @@ p {
 }
 
 #grade-table select {
-    background-color: #FFC180;
+    background-color: var(--color-mellow-apricot);
     font-weight: bolder;
     text-align: center;
     padding: 0px 2px 0px 12px;
+    cursor:pointer;
+
 }
 
 #grade-table tbody tr {
-    border-bottom: 1px solid #ececee;
+    border-bottom: 1px solid var(--color-cultured);
 }
 
 #grade-table tbody tr:nth-of-type(odd) {
-    background-color: #ffffff;
+    background-color: var(--color-white);
 }
 
 #grade-table tbody tr:nth-of-type(even) {
-    background-color: #ececee;
+    background-color: var(--color-cultured);
 }
 
 #grade-table tbody tr:last-of-type {
-    border-bottom: 2px solid #ea7600;
+    border-bottom: 2px solid var(--color-princeton-orange);
     /*Bottom cell border highlight; */
 }
 
@@ -183,16 +209,16 @@ p {
 }
 
 #useful-links-list a {
-    border: 2px solid #ea7600;
-    color: #ea7600;
+    border: 2px solid var(--color-princeton-orange);
+    color: var(--color-princeton-orange);
     padding: 6px;
     font-weight: bold;
 }
 
 #useful-links-list a:hover,
 #useful-links-list a:focus {
-    border: 2px solid #FFC180;
-    color: #FFC180;
+    border: 2px solid var(--color-mellow-apricot);
+    color: var(--color-mellow-apricot);
 }
 
 /* Footer Bar */
@@ -213,5 +239,5 @@ footer {
     font-size: 500%;
     margin: 1%;
     padding: 0 5%;
-    color: #ECECEC;
+    color: var(--color-cultured);
 }

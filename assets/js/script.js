@@ -176,8 +176,8 @@ class randomButtonInterpreter {
 function randomiseResults(whichButton) {
     newLowerCaseResults = []
     for (i = 0; i < selectedResults.length; i++) {
-        let random0 = (Math.floor(Math.random() * lowerCaseResults.length)); // full random index int for array
-        newLowerCaseResults.push(lowerCaseResults[random0])
+        let random = (Math.floor(Math.random() * lowerCaseResults.length));
+        newLowerCaseResults.push(lowerCaseResults[random])
     }
     calculateResults(newLowerCaseResults);
 
@@ -221,9 +221,7 @@ function insertTotalsToTable(multipliedTotalsArray) {
     })
 }
 
-/** 
- * inserts final sum to page
- * */
+/** inserts final sum to page * */
 function insertSumToPage(inSum) {
     sumSpan.innerText = inSum;
 }
