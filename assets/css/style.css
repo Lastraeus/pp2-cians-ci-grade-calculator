@@ -113,7 +113,6 @@ p {
 /* Randomizer Buttons */
 .random-input-buttons {
     cursor:pointer;
-    text-decoration:;
     outline: none;
     font-size: 1.3rem;
     font-weight: bold;
@@ -204,6 +203,7 @@ p {
 
 #useful-links-list li {
     list-style-type: none;
+    text-decoration: none;
 
 }
 
@@ -212,6 +212,8 @@ p {
     color: var(--color-princeton-orange);
     padding: 6px;
     font-weight: bold;
+    text-decoration: none;
+
 }
 
 #useful-links-list a:hover,
