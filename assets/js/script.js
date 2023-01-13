@@ -2,15 +2,16 @@ let selectedResults = []
 const resultStrings = ["Pass", "Merit", "Distinction"];
 let lowerCaseResults = [];
 let tableBody = document.querySelector("grade-table-body");
-let gradeSelectors = document.querySelectorAll(".grade-select")
-let sumSpan = document.querySelector("#total-result-points") // Span where Summed Points Are displayed
-let resultP = document.querySelector("#displayed-result") // Span where Final Grade Word is displayed
+let gradeSelectors = document.querySelectorAll(".grade-select");
+let sumSpan = document.querySelector("#total-result-points"); // Span where Summed Points Are displayed
+let resultP = document.querySelector("#displayed-result"); // Span where Final Grade Word is displayed
 let finalSum = sumSpan.innerText;
 let finalResult = resultP.innerText;
 let randomButtons = document.querySelectorAll(".random-input-buttons");
 let buttonsNotSet = false;
-let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)")
+let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)");
 let tableTotalsNodes = document.querySelectorAll("tr td:nth-of-type(5)");
+let scrollTarget = document.querySelector("#scroll-to-me");
 
 /** starts the table reading and update systems */
 function startTableGradeSystem() {
@@ -166,9 +167,14 @@ function initializeRandomButtons() {
 class randomButtonInterpreter {
     constructor(button) {
         let specificButtonNode = document.querySelector(`#${button}`);
+
         specificButtonNode.addEventListener("click", e => {
             let selectedButtonNumber = button.charAt(button.length - 1)
             randomiseResults(selectedButtonNumber);
+
+            scrollTarget.scrollIntoView({
+                behavior: 'smooth'
+              });
         });
     }
 }
