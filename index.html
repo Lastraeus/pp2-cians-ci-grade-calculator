@@ -40,8 +40,157 @@
                 Or hit the Randomise Button to generate different arrangements of grades.
             </p>
             <br>
+            <div id="rules-modal-button-div">
+                <button id="rules-modal-button" class="buttons modal-buttons" data-modal-target="#modal">Click here to expand Rules/Credits/Points</button>
+            </div>
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <div id="modal-title">
+                        <h2 id="rules-modal-title">Final Grade Calculation Rules</h2>
+                        <h3 id="rules-modal-subtitle">As Per Official Code Institute Assessment Guide</h3>
+                    </div> 
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        The five projects all contribute to your final grade.
+                        <br><br>
+                        This is calculated from the points awarded for a pass/merit/distinction multiplied by the
+                        number of credit points per module.
+                        <br><br>
+                        These are depicted in the table below.
+                        The maximum number of points available are 480.
+                    </p>
+                    <br>
+                    <table id="credit-explanation-table" class="explanation-tables center">
+                        <thead>
+                            <th>Module</th>
+                            <th>Credit Points</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    PP1 - HTML/CSS Essentials
+                                </td>
+                                <td>
+                                    8
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    PP2 - Javascript Essentials
+                                </td>
+                                <td>
+                                    8
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    PP3 - Python Essentials
+                                </td>
+                                <td>
+                                    8
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    PP4 - Full Stack Toolkit
+                                </td>
+                                <td>
+                                    16
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    PP5 - Chosen Specialisation
+                                </td>
+                                <td>
+                                    20
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table id="points-per-grade-table" class="explanation-tables center">
+                        <thead>
+                            <th>Points Per Grade</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Pass
+                                </td>
+                                <td>
+                                    4
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Merit
+                                </td>
+                                <td>
+                                    6
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Distinction
+                                </td>
+                                <td>
+                                    8
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table id="grade-bands-table" class="explanation-tables center">
+                        <thead>
+                        <th>Grade Bands</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        Pass
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        240 - 311
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        Merit
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        312 - 383
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        Distinction
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        384 - 480
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="overlay"></div>
             <!-- Expandable Div (by clicking) Shows Official Calculation Rules -->
-            <div id="expand-calc-rules">
+            <!-- <div id="expand-calc-rules">
                 <article id="assesment-quote">
                     <h2>
                         Final Grade Calculation As Per Official Assessment Guide
@@ -64,18 +213,18 @@
                     </p>
                 </article>
             </div>
-        </div>
+        </div> -->
         <br>
         <!-- Randomizer Buttons Section -->
         <div id="scroll-to-me"></div>
         <div id="random-buttons-div" class="center">
-            <input type="button" value="Totally Randomise!" id="random-button0" class="center random-input-buttons">
+            <input type="button" value="Totally Randomise!" id="random-button0" class="center buttons random-input-buttons">
             <br><br>
-            <input type="button" value="Random Final Pass" id="random-button1" class="center random-input-buttons">
+            <input type="button" value="Random Final Pass" id="random-button1" class="center buttons random-input-buttons">
             <br><br>
-            <input type="button" value="Random Final Merit" id="random-button2" class="center random-input-buttons">
+            <input type="button" value="Random Final Merit" id="random-button2" class="center buttons random-input-buttons">
             <br><br>
-            <input type="button" value="Random Final Distinction" id="random-button3" class="center random-input-buttons">
+            <input type="button" value="Random Final Distinction" id="random-button3" class="center buttons random-input-buttons">
         </div>
         <!-- Interactive Final Grade Calculator -->
         <div id="table-div" class="center">
@@ -226,6 +375,7 @@
     </footer>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/insert-guide-script.js"></script>
+    <script src="assets/js/modal-script.js"></script>
 </body>
 
 </html>
