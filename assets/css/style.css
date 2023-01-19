@@ -51,7 +51,7 @@ p {
 }
 
 /* Header Section & Nav Bar*/
-#menu {
+.menu {
     font-size: 120%;
     letter-spacing: 4px;
     display: flex;
@@ -59,27 +59,26 @@ p {
     background-color: var(--color-nickle);
 }
 
-#menu,
+.menu,
 .logos {
-    /* mobile menu TODO */
     line-height: 75px
 }
 
-#menu li {
+.menu li {
 
     list-style-type: none;
     margin: 0 1rem;
 }
 
-#menu a {
+.menu a {
     text-decoration: none;
     border: 2px solid var(--color-cultured);
     color: var(--color-cultured);
     padding: 6px;
 }
 
-#menu a:hover,
-#menu a:focus {
+.menu a:hover,
+.menu a:focus {
 
     border: 2px solid var(--color-princeton-orange);
     color: var(--color-princeton-orange);
@@ -309,9 +308,9 @@ footer {
         margin: 5%;
     }
 
-    .center {
+    /* .center button{
         margin: 0;
-    }
+    } */
     
     #grade-calc-title{
         max-width: 50%;
@@ -332,4 +331,27 @@ footer {
         font-size: 1.2rem;
         margin: 0;
     }
+}
+
+@media (max-width: 800px) {
+    .large-to-hide {
+        display: none;
+    }
+
+    .small-to-hide {
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+
+@media (min-width: 800px) {
+    .large-to-hide {
+        display: flex;
+    }
+
+    .small-to-hide {
+        display: none;
+    }
+
 }

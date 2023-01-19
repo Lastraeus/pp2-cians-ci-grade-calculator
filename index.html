@@ -18,7 +18,8 @@
         </h1>
         <!-- Nav Menu -->
         <nav>
-            <ul id="menu" class="center">
+            <!-- Large Menu -->
+            <ul id="large-menu" class="center menu large-to-hide">
                 <li>
                     <a href="#grade-calc-section" aria-label="Scroll this window to the Explanation Section">Intro & Rules</a>
                 </li>
@@ -29,6 +30,25 @@
                     <a href="#useful-links-section" aria-label="Scroll this window to the Useful Links Section">Useful Links</a>
                 </li>
             </ul>
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu" class="center menu small-to-hide">
+                <li>
+                    <a href="#grade-calc-section" aria-label="Scroll this window to the Explanation Section">
+                        <i class="fa-light fa-book"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#random-buttons-div" aria-label="Scroll this window to the Grade Calculator Table">
+                        <i class="fa-solid fa-calculator"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#useful-links-section" aria-label="Scroll this window to the Useful Links Section">
+                        <i class="fa-solid fa-link"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <!-- Main Final Grade Calculator Section of the site -->
     <section id="grade-calc-section" class="content-sections">
@@ -197,13 +217,20 @@
         <!-- Randomizer Buttons Section -->
         <div id="scroll-to-me"></div>
         <div id="random-buttons-div" class="center">
-            <input type="button" value="Totally Randomise!" id="random-button0" class="center buttons random-input-buttons">
+            <!-- <input type="button" value="Totally Randomise!" id="random-button0" class="center buttons random-input-buttons">
             <br><br>
             <input type="button" value="Random Final Pass" id="random-button1" class="center buttons random-input-buttons">
             <br><br>
             <input type="button" value="Random Final Merit" id="random-button2" class="center buttons random-input-buttons">
             <br><br>
-            <input type="button" value="Random Final Distinction" id="random-button3" class="center buttons random-input-buttons">
+            <input type="button" value="Random Final Distinction" id="random-button3" class="center buttons random-input-buttons"> -->
+            <button id="random-button0" class="center buttons random-input-buttons">Totally Randomise!</button>
+            <br><br>
+            <button id="random-button1" class="center buttons random-input-buttons">Random Final Pass</button>
+            <br><br>
+            <button id="random-button2" class="center buttons random-input-buttons">Random Final Merit</button>
+            <br><br>
+            <button id="random-button3" class="center buttons random-input-buttons">Random<br>Final Distinction</button>
         </div>
         <!-- Interactive Final Grade Calculator -->
         <div id="table-div" class="center">
