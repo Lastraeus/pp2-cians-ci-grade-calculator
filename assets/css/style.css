@@ -232,8 +232,14 @@ p {
     background-color: var(--color-cultured);
 }
 
+
+/* Results row */
 #grade-table tbody tr:last-of-type {
+    background-color: var(--color-mellow-apricot);
+    font-weight: bolder;
+    text-align: right;
     border-bottom: 2px solid var(--color-princeton-orange);
+    columns: 2;
     /*Bottom cell border highlight; */
 }
 
@@ -308,10 +314,6 @@ footer {
         margin: 5%;
     }
 
-    /* .center button{
-        margin: 0;
-    } */
-    
     #grade-calc-title{
         max-width: 50%;
         margin: 0;
@@ -331,6 +333,7 @@ footer {
         font-size: 1.2rem;
         margin: 0;
     }
+
 }
 
 @media (max-width: 800px) {

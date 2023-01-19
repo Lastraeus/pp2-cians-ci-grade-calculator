@@ -9,8 +9,8 @@ let finalSum = sumSpan.innerText;
 let finalResult = resultP.innerText;
 let randomButtons = document.querySelectorAll(".random-input-buttons");
 let buttonsNotSet = false;
-let tablePointsNodes = document.querySelectorAll("tr td:nth-of-type(4)");
-let tableTotalsNodes = document.querySelectorAll("tr td:nth-of-type(5)");
+let tablePointsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(4)");
+let tableTotalsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(5)");
 let scrollTarget = document.querySelector("#scroll-to-me");
 
 /** starts the table reading and update systems */
