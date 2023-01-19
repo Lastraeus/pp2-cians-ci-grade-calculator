@@ -188,8 +188,6 @@ p {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 280px;
-    /*galaxy fold size*/
     border-radius: 5px 5px 0 0;
     /* top rounded border*/
     overflow: hidden;
@@ -308,35 +306,12 @@ footer {
 }
 
 /* Media Queries/Responsiveness */
-@media (max-width: 600px) {
-    .content-sections {
-        margin: 5%;
+@media (max-width: 310px) {
+    #grade-table th,
+    #grade-table td {
+        padding: 0.5rem;
     }
-
-    .center {
-        margin: 5%;
-    }
-
-    #grade-calc-title{
-        max-width: 50%;
-        margin: 0;
-    }
-
-    #intro-calc-content{
-        max-width: 50%;
-        margin: 5% 0;
-    }
-
-    #rules-modal-button-div, #random-buttons-div {
-        max-width: fit-content;
-        margin: 0;
-    }
-
-    .buttons {
-        font-size: 1.2rem;
-        margin: 0;
-    }
-
+    
 }
 
 @media (max-width: 800px) {
