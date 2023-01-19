@@ -243,7 +243,6 @@ function insertResultToPage(inSum) {
     resultP.innerText
 }
 
-
 /** 
  * Wait for the DOM to finish loading, then run the initial system
  * */

@@ -86,11 +86,7 @@ p {
 }
 
 /* Grade Calc Sections */
-
 /* Grade Calc Modal (replace expand rule section) */
-#rules-modal-button-div{
-    
-}
 
 .modal {
     position: fixed;
@@ -182,10 +178,6 @@ p {
     color: var(--color-white);
     background-color: var(--color-mellow-apricot);
     box-shadow: 0.4rem 0.4rem 0 var(--color-mellow-apricot-darker);
-}
-
-.random-input-buttons {
- 
 }
 
 .random-input-buttons:active {
