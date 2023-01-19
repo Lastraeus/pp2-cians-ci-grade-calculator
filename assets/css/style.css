@@ -41,7 +41,7 @@ body {
     max-width: 60%;
     margin: 30px auto;
     border-radius: 2.5%;
-    min-width: 280px;
+    /* min-width: 280px; */
 }
 
 p {
@@ -86,8 +86,17 @@ p {
 }
 
 /* Grade Calc Sections */
-/* Grade Calc Modal (replace expand rule section) */
+/* Grade Calc Intro Section */
+#grade-calc-section {
+    max-width: fit-content;
+}
 
+#intro-calc-content {
+    width: 90%;
+    margin: auto;
+}
+
+/* Grade Calc Modal & Modal Button(replace expand rule section) */
 .modal {
     position: fixed;
     top: 50%;
@@ -156,18 +165,8 @@ p {
     pointer-events: all;
   }
 
-/* Grade Calc Intro Section */
-#grade-calc-section {
-    max-width: fit-content;
-}
-
-#intro-calc-content {
-    width: 90%;
-    margin: auto;
-}
 
 /*Grade Calc Randomizer Buttons */
-
 .buttons{
     cursor:pointer;
     outline: none;
@@ -180,7 +179,7 @@ p {
     box-shadow: 0.4rem 0.4rem 0 var(--color-mellow-apricot-darker);
 }
 
-.random-input-buttons:active {
+.buttons:active {
 	transform: translateX(0.2rem) translateY(0.2rem);
 	box-shadow: 0.2rem 0.2rem 0 var(--color-mellow-apricot-darker);
 }
@@ -298,4 +297,39 @@ footer {
     margin: 1%;
     padding: 0 5%;
     color: var(--color-cultured);
+}
+
+/* Media Queries/Responsiveness */
+@media (max-width: 600px) {
+    .content-sections {
+        margin: 5%;
+    }
+
+    .center {
+        margin: 5%;
+    }
+
+    .center {
+        margin: 0;
+    }
+    
+    #grade-calc-title{
+        max-width: 50%;
+        margin: 0;
+    }
+
+    #intro-calc-content{
+        max-width: 50%;
+        margin: 5% 0;
+    }
+
+    #rules-modal-button-div, #random-buttons-div {
+        max-width: fit-content;
+        margin: 0;
+    }
+
+    .buttons {
+        font-size: 1.2rem;
+        margin: 0;
+    }
 }
