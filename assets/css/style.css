@@ -13,6 +13,12 @@
     --color-mellow-apricot-darker: #ca9d6d;
     --color-nickle: #717575;
     --color-white: #FFFFFF;
+    --color-bronze: #CD7F32;
+    --color-bronze-darker: #8a5623;
+    --color-silver: #C0C0C0;
+    --color-silver-darker: #818181;
+    --color-gold: #ffbb00;
+    --color-gold-darker: #a38b00;
 }
 
 /* account for any border and padding in the values */
@@ -63,11 +69,10 @@ p {
 
 .menu,
 .logos {
-    line-height: 75px
+    line-height: 4.5rem;
 }
 
 .menu li {
-
     list-style-type: none;
     margin: 0 1rem;
 }
@@ -185,6 +190,36 @@ p {
     box-shadow: 0.2rem 0.2rem 0 var(--color-mellow-apricot-darker);
 }
 
+#random-button1 {
+    background-color: var(--color-bronze);
+    box-shadow: 0.4rem 0.4rem 0 var(--color-bronze-darker);
+}
+
+#random-button1:active {
+    transform: translateX(0.2rem) translateY(0.2rem);
+    box-shadow: 0.2rem 0.2rem 0 var(--color-bronze-darker);
+}
+
+#random-button2 {
+    background-color: var(--color-silver);
+    box-shadow: 0.4rem 0.4rem 0 var(--color-silver-darker);
+}
+
+#random-button2:active {
+    transform: translateX(0.2rem) translateY(0.2rem);
+    box-shadow: 0.2rem 0.2rem 0 var(--color-silver-darker);
+}
+
+#random-button3 {
+    background-color: var(--color-gold);
+    box-shadow: 0.4rem 0.4rem 0 var(--color-gold-darker);
+}
+
+#random-button3:active {
+    transform: translateX(0.2rem) translateY(0.2rem);
+    box-shadow: 0.2rem 0.2rem 0 var(--color-gold-darker);
+}
+
 /* Final Grace Calculator Table */
 #grade-table {
     border-collapse: collapse;
@@ -232,7 +267,6 @@ p {
     background-color: var(--color-cultured);
 }
 
-
 /* Results row */
 #grade-table tbody tr:last-of-type {
     background-color: var(--color-mellow-apricot);
@@ -268,7 +302,6 @@ p {
 #useful-links-list li {
     list-style-type: none;
     text-decoration: none;
-
 }
 
 #useful-links-list a {
@@ -277,7 +310,6 @@ p {
     padding: 6px;
     font-weight: bold;
     text-decoration: none;
-
 }
 
 #useful-links-list a:hover,
@@ -309,7 +341,7 @@ footer {
 
 /* Media Queries/Responsiveness */
 @media (max-width: 310px) {
-    #grade-calc-section{
+    #grade-calc-section {
         max-width: 96%;
     }
 }
@@ -341,7 +373,15 @@ footer {
     }
 }
 
+@media (max-width: 660px) {
+    .logos {
+        line-height: 2.4rem;
+        margin: 4%;
+    }
+}
+
 @media (max-width: 380px) {
+
     #grade-table th,
     #grade-table td {
         padding: 0.5rem 0.2rem;

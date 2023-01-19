@@ -62,9 +62,9 @@ class GradeChangeInterpreter {
  * Returns total points summed from previous array.
  * */
 function calculateResults(rawResults) {
-    let selectedResultPointsIntArray = translateResultArray(rawResults); 
+    let selectedResultPointsIntArray = translateResultArray(rawResults);
     let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntArray);
-    let sumTotalPoints = multipliedResultsArray.reduce((a, b) => { 
+    let sumTotalPoints = multipliedResultsArray.reduce((a, b) => {
         return a + b;
     });
     insertDataToTable(selectedResultPointsIntArray, multipliedResultsArray, sumTotalPoints);
@@ -174,7 +174,7 @@ class randomButtonInterpreter {
 
             scrollTarget.scrollIntoView({
                 behavior: 'smooth'
-              });
+            });
         });
     }
 }
