@@ -238,9 +238,12 @@ p {
     background-color: var(--color-mellow-apricot);
     font-weight: bolder;
     text-align: right;
-    border-bottom: 2px solid var(--color-princeton-orange);
-    columns: 2;
+    border-bottom: 5px solid var(--color-princeton-orange);
     /*Bottom cell border highlight; */
+}
+
+#grade-table tbody tr:last-of-type td:last-of-type {
+    text-align: left;
 }
 
 /* Useful Links Section */
