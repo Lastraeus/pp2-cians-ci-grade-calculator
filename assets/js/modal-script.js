@@ -2,15 +2,6 @@ let openModalButtons = document.querySelectorAll('[data-modal-target]')
 let closeModalButtons = document.querySelectorAll('[data-close-button]')
 let modalOverlay = document.getElementById('overlay')
 
-/**
- * Start modal listeners at page load.
- */
-function startModalListeners () {
-  addOpenModalListener();
-  addCloseModalListener();
-  addCloseModalOverlayListener();
-}
-
 function openModal(modal) {
   if (modal == null) return
   modal.classList.add('active')
@@ -50,5 +41,13 @@ function addCloseModalOverlayListener() {
   })
 }
 
-// Wait for the DOM to finish loading, then run the initial system
+/**
+ * Start modal listeners at page load.
+ */
+function startModalListeners () {
+  addOpenModalListener();
+  addCloseModalListener();
+  addCloseModalOverlayListener();
+}
+
 document.addEventListener("DOMContentLoaded", startModalListeners);
