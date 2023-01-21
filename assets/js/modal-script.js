@@ -5,20 +5,10 @@ let modalOverlay = document.getElementById('overlay')
 /**
  * Start modal listeners at page load.
  */
-function startModals () {
-  openModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      let modal = document.querySelector(button.dataset.modalTarget)
-      openModal(modal)
-    })
-  })
-
-  closeModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      let modal = button.closest('.modal')
-      closeModal(modal)
-    })
-  })
+function startModalListeners () {
+  addOpenModalListener();
+  addCloseModalListener();
+  addCloseModalOverlayListener();
 }
 
 function openModal(modal) {
@@ -33,12 +23,32 @@ function closeModal(modal) {
   modalOverlay.classList.remove('active')
 }
 
-modalOverlay.addEventListener('click', () => {
-  let modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => {
-    closeModal(modal)
+function addOpenModalListener() {
+  openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      let modal = document.querySelector(button.dataset.modalTarget)
+      openModal(modal)
+    })
   })
-})
+}
+
+function addCloseModalListener() {
+  closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      let modal = button.closest('.modal')
+      closeModal(modal)
+    })
+  })
+}
+
+function addCloseModalOverlayListener() {
+  modalOverlay.addEventListener('click', () => {
+    let modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+      closeModal(modal)
+    })
+  })
+}
 
 // Wait for the DOM to finish loading, then run the initial system
-document.addEventListener("DOMContentLoaded", startModals);
+document.addEventListener("DOMContentLoaded", startModalListeners);
