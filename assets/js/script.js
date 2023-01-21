@@ -103,20 +103,20 @@ function translateResultArray(wordResults) {
 function multiplyCreditsByCases(pointsArray) {
     let multipliedCreditsArray = []
     for (let i = 0; i <= pointsArray.length; i++) {
+        let coefficient = null;
         if (i <= 2) {
-            multipliedCreditsArray.push((pointsArray[i]) * 8) // First 3 Projects are 8 credits
-            continue;
+            coefficient = 8 // First 3 Projects are 8 credits
         } else if (i === 3) {
-            multipliedCreditsArray.push((pointsArray[i]) * 16) // 3rd project is 16 credits 
-            continue;
+            coefficient =  16 // 3rd project is 16 credits 
         } else if (i === 4) {
-            multipliedCreditsArray.push((pointsArray[i]) * 20) // 4th project is 24 credits 
-            ;
-        } else {
-            multipliedCreditsArray.push("Error") // Unexpected/Error case
+             coefficient =  20 // 4th project is 20 credits 
+        } 
+        
+        if (coefficient) {
+        	multipliedCreditsArray.push((pointsArray[i]) * coefficient) 
         }
-        return multipliedCreditsArray;
     }
+    return multipliedCreditsArray;
 }
 
 function toLowerCaseArray(inArrayOfStrings) {
