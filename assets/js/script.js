@@ -21,9 +21,12 @@ function startTableGradeSystem() {
     initializeRandomButtons();
 }
 
+/**
+ * Creates an array of the currently selected calculator options then passes them to calculateResults().
+ */
 function tableGradeRead() {
     gradeSelectors.forEach(grade => {
-        selectedResults.push(grade.value); // creates an array of the currently selected options
+        selectedResults.push(grade.value); // 
     })
     calculateResults(selectedResults);
 }
@@ -48,19 +51,21 @@ class GradeChangeInterpreter {
 
         let specificGradeId = document.querySelector(`#${gradeId}`)
 
-        // add unique listener to each that resets the 
         specificGradeId.addEventListener("change", e => {
             selectedResults = []
             tableGradeRead()
         });
     }
 }
-/** 
- * inputs array of strings to arrive at array of total points for each project
+
+/**
+ * Takes array of strings to generate two new Arrays and and Int of overal total points.
+ * 
  * Makes an array of values after turning "pass" to int 4 (for points per grade) etc
  * Makes a new array after multiplying creds per project by points
  * Returns total points summed from previous array.
- * */
+ * @param {Array} rawResults    Array from tableGradeRead()
+ */
 function calculateResults(rawResults) {
     let selectedResultPointsIntArray = translateResultArray(rawResults);
     let multipliedResultsArray = multiplyCreditsByCases(selectedResultPointsIntArray);
@@ -100,6 +105,13 @@ function translateResultArray(wordResults) {
     return translatedResults;
 }
 
+/**
+ * Takes Array of (5) ints representing each result's point value and
+ * multiplies them by the correct Credit amount for that module. 
+ * 
+ * @param {Array} pointsArray Current Array of "points" column values on each line of table.
+ * @returns New Array of each lines points value multiplied by correct credit amount.
+ */
 function multiplyCreditsByCases(pointsArray) {
     let multipliedCreditsArray = []
     for (let i = 0; i <= pointsArray.length; i++) {
@@ -119,6 +131,12 @@ function multiplyCreditsByCases(pointsArray) {
     return multipliedCreditsArray;
 }
 
+/**
+ * Converts Array of strings to lowercase.
+ * 
+ * @param {Array} inArrayOfStrings Any array of String values.
+ * @returns Array of strings all in lowercase
+ */
 function toLowerCaseArray(inArrayOfStrings) {
     let result = []
     for (word of inArrayOfStrings) {
