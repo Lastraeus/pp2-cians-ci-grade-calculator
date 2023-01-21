@@ -49,12 +49,10 @@ body {
     max-width: 60%;
     margin: 30px auto;
     border-radius: 2.5%;
-    /* min-width: 280px; */
 }
 
 p {
     max-width: 260px;
-    /* Galaxy Fold */
     margin: 0 auto;
 }
 
@@ -129,6 +127,10 @@ p {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+}
+
+#modal-title {
+    margin:0 auto;
 }
 
 .modal-header .close-button {
@@ -229,7 +231,7 @@ p {
     border-radius: 5px 5px 0 0;
     /* top rounded border*/
     overflow: hidden;
-    /* allows top border raidus to work*/
+    /* allows top border radius to work*/
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     /* pleasing shadow effect */
 }
