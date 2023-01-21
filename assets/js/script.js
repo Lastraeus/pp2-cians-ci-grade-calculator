@@ -1,5 +1,5 @@
-let selectedResults = []
 const resultStrings = ["Pass", "Merit", "Distinction"];
+let selectedResults = []
 let lowerCaseResults = [];
 let tableBody = document.querySelector("grade-table-body");
 let gradeSelectors = document.querySelectorAll(".grade-select");

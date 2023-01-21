@@ -1,6 +1,6 @@
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const modalOverlay = document.getElementById('overlay')
+let openModalButtons = document.querySelectorAll('[data-modal-target]')
+let closeModalButtons = document.querySelectorAll('[data-close-button]')
+let modalOverlay = document.getElementById('overlay')
 
 /**
  * Start modal listeners at page load.
@@ -8,14 +8,14 @@ const modalOverlay = document.getElementById('overlay')
 function startModals () {
   openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const modal = document.querySelector(button.dataset.modalTarget)
+      let modal = document.querySelector(button.dataset.modalTarget)
       openModal(modal)
     })
   })
 
   closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const modal = button.closest('.modal')
+      let modal = button.closest('.modal')
       closeModal(modal)
     })
   })
@@ -34,7 +34,7 @@ function closeModal(modal) {
 }
 
 modalOverlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
+  let modals = document.querySelectorAll('.modal.active')
   modals.forEach(modal => {
     closeModal(modal)
   })
