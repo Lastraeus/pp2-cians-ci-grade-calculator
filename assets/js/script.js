@@ -146,6 +146,11 @@ function toLowerCaseArray(inArrayOfStrings) {
     return result;
 }
 
+/**
+ * Reads the points cells next to any given grade selector (run after they're updated by randomise buttons process),
+ * translates the new points cell value into the relevant selection option,
+ * sets that value as the currently displayed/selected option for the selector dropdown.
+ */
 function updateSelectors() {
     gradeSelectors.forEach(grade => {
         let gradeCell = grade.parentElement;
@@ -158,6 +163,11 @@ function updateSelectors() {
     });
 }
 
+/**
+ * Takes a vaule from the points table and returns it's equivilant grade value string.
+ * @param {*} gradeValue 
+ * @returns strings of "Pass", "Merit","Distinction" depending on case or "Error" in event of invalid case.
+ */
 function reverseTranslateResult(gradeValue) {
     switch (gradeValue) {
         case "4":
@@ -171,6 +181,9 @@ function reverseTranslateResult(gradeValue) {
     }
 }
 
+/**
+ * This function creates a randomButtonInterpreter for each button, to facilitate  
+ */
 function initializeRandomButtons() {
     randomButtons.forEach(button => {
         new randomButtonInterpreter(button.id);
@@ -181,6 +194,7 @@ function initializeRandomButtons() {
  * add missing "#" to passed buttonId value
  * add unique listener to each that runs the relevant randomiser
  * last number of id equals which function to run
+ * Each listener also scrolls the relevant content into view.
  */
 class randomButtonInterpreter {
     constructor(button) {
@@ -197,6 +211,11 @@ class randomButtonInterpreter {
     }
 }
 
+/**
+ * Runs the correct randomise algorithm depending on which button was pressed. Then runs updateSelectors() to push changes to page.
+ * Reruns the bounded final pass, final merit etc cases until the desired result is generated.
+ * @param {*} whichButton passes correct ID number of the the specific randomiser button (the final character of the button's ID)
+ */
 function randomiseResults(whichButton) {
     newLowerCaseResults = []
     for (i = 0; i < selectedResults.length; i++) {
@@ -250,6 +269,7 @@ function insertSumToPage(inSum) {
     sumSpan.innerText = inSum;
 }
 
+/** inserts final result word to page * */
 function insertResultToPage(inSum) {
     if (inSum <= 311) {
         resultP.innerText = resultStrings[0];
