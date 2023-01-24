@@ -40,7 +40,7 @@ Site is responsive and adapts to smaller screen sizes while maintaining structur
 
 1.  HTML                Used to build markup stucture of the site.                  
 2.  CSS                 Used to provide both global and targated styling to the HTML
-3.  Javascript          Used to probide site interactivity.    
+3.  Javascript          Used to provide site interactivity.    
 4.  GitHub              Used as a repository for the project                        https://github.com/
 5.  GitPod              Used as the VDE of the project.                             https://www.gitpod.io/
 6.  Firefox             Used as main browser of the project (Browsing, Editing, Dev Tools, Screenshot capablilites)     https://www.mozilla.org/en-US/firefox/new/

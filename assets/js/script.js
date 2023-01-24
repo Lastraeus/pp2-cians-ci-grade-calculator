@@ -182,21 +182,24 @@ function reverseTranslateResult(gradeValue) {
 }
 
 /**
- * This function creates a randomButtonInterpreter for each button, to facilitate  
+ * This function creates a RandomButtonInterpreter() class object for each button, to facilitate unique button specfic listeners.
  */
 function initializeRandomButtons() {
     randomButtons.forEach(button => {
-        new randomButtonInterpreter(button.id);
+        new RandomButtonInterpreter(button.id);
     });
 }
 
 /**
+ * This Class creates button objects with unique listeners that run the correct randomiser algorithm,
+ * while scrolling the table/results/buttons into view.
+ * 
  * add missing "#" to passed buttonId value
  * add unique listener to each that runs the relevant randomiser
- * last number of id equals which function to run
+ * last number of id equals which randomiseResults() case to run
  * Each listener also scrolls the relevant content into view.
  */
-class randomButtonInterpreter {
+class RandomButtonInterpreter {
     constructor(button) {
         let specificButtonNode = document.querySelector(`#${button}`);
 
@@ -214,6 +217,7 @@ class randomButtonInterpreter {
 /**
  * Runs the correct randomise algorithm depending on which button was pressed. Then runs updateSelectors() to push changes to page.
  * Reruns the bounded final pass, final merit etc cases until the desired result is generated.
+ * 
  * @param {*} whichButton passes correct ID number of the the specific randomiser button (the final character of the button's ID)
  */
 function randomiseResults(whichButton) {
@@ -247,7 +251,11 @@ function randomiseResults(whichButton) {
     updateSelectors()
 };
 
-/**sets each td text in points column to equivlent int from pointsArray */
+
+/**
+ * sets each td text in points column to equivlent int from pointsArray
+ * @param {Array} pointsArray Contains an array of each points value awarded by each grade, in project order.
+ */
 function insertPointsToTable(pointsArray) {
     let i = 0;
     tablePointsNodes.forEach(pointsCell => {
@@ -255,7 +263,12 @@ function insertPointsToTable(pointsArray) {
         i++;
     })
 }
-/**sets each td text in totals column to equivlent int from multipliedTotalsArray */
+
+/**
+ * sets each td text in totals column to equivlent int from multipliedTotalsArray.
+ * 
+ * @param {Array} multipliedTotalsArray Contains an array of total value of (points per grade * credits per project), in project order.
+ */
 function insertTotalsToTable(multipliedTotalsArray) {
     let i = 0;
     tableTotalsNodes.forEach(totalsCell => {
@@ -264,12 +277,20 @@ function insertTotalsToTable(multipliedTotalsArray) {
     })
 }
 
-/** inserts final sum to page * */
+/** 
+ * Inserts final sum to page as innerText of the correct Span.
+ * 
+ * @param {Number} inSum Sum of each project total scored points(after credits * grade value calculation has been done).
+ */
 function insertSumToPage(inSum) {
     sumSpan.innerText = inSum;
 }
 
-/** inserts final result word to page * */
+/**
+ * Takes the inSum Number variable and evaluates it to the correct Grade word in String form.
+ * 
+ * @param {Number} inSum Sum of each project total scored points(after credits * grade value calculation has been done).
+ */
 function insertResultToPage(inSum) {
     if (inSum <= 311) {
         resultP.innerText = resultStrings[0];
