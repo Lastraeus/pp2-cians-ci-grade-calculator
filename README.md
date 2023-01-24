@@ -33,6 +33,26 @@ I inspected some websites found on google searches for possible similar projects
 
 I had interest in developing additional site functionality non-specific to this course, such as a day's until calculator but this proved to be a exceptionally well trodden road and I narrowed down the project scope to the unsolved problem of the Code Institute grade calculator, and simply link to a existing Day's until calculator instead of re-inventing the wheel.
 
+## __Planning__
+I initially planned a version of the calculator page for both desktop and mobile sizes as well as a potential seconday page to add "days until X date" functionality.
+
+  ![Large Calculator Wireframe](docs/readme-images/wireframe-main-calc-page-desktop.png)
+
+  ![Large Calculator Wireframe](docs/readme-images/wireframe-main-calc-page-smartphone.png)
+
+  ![Large Calculator Wireframe](docs/readme-images/wireframe-potential-days-until-calculator-desktop.png)
+
+As the project developed the secondary page was decided to be beyond project scope (and was well trodden functionality available elsewhere to a high standard), and the implementation of the Grade Table and other elements resulted in a less drastic differance between the layout needed for the mobile size version.
+
+The secondary page was then added instead as a useful links section under the calculator.
+
+### __Color Scheme__
+A lighter color scheme was developed for the site featuring Orange (my favourite color!). It featured; a bold orange base background, light grey content boxes, dark grey text, apricot(light orange/beige) for certain highlighting and white for some large text.
+
+This was used throughout project development as a guide to the color styling.
+
+  ![Coolor Website palette](docs/readme-images/coolors-color-palette.png)
+
 ## __Features__
 A single page website featuring:
 
@@ -53,6 +73,7 @@ __2.__ An expandable modal opened with a button containing the official calculat
 
   *	A button to open the modal.
   ![Modal Button](docs/readme-images/modal-button.png)
+  
   *	Responsive sizeing to display information on all screen sizes in a clear way.
   *	A overlay to focus the user on the newly displayed information and a opacity to encourage the user to realize they can click the overlay area to get back to the site behind. (Clicking the overlay closes the modal)
   *	A specifc "X" to close the modal in it's title as the obvious choice of closing the modal.
@@ -63,21 +84,24 @@ __2.__ An expandable modal opened with a button containing the official calculat
   ![Small Size Modal Scrolled down](docs/readme-images/modal-small-scrolled.png)
 
 __3.__	The Final Grade Calculator itself, with two display modes depending on screen size.
+
   ![Large Size Final Grade Calculator](docs/readme-images/grade-calc-table-wide.png)
   ![Small Size Final Grade Calculator](docs/readme-images/grade-calc-table-small.png)
 
-    *	Selectable grades for each project, which when changed will live update the Total Points (on each row, and final total) as well as the displayed Final Result Grade
+  *	Selectable grades for each project, which when changed will live update the Total Points (on each row, and final total) as well as the displayed Final Result Grade
 
   ![Selectable grades](docs/readme-images/selector-click-small.png)
 
-    *	Large/Main Table Mode for Large Screens with potential grades selectable
-    *	Truncated table with less padding space and removed least important columns. These are hidden with css media queries and classes for narrow screen sizes.
+  *	Large/Main Table Mode for Large Screens with potential grades selectable
+  *	Truncated table with less padding space and removed least important columns. These are hidden with css media queries and classes for narrow screen sizes.
 
 __4.__ The Calculator will also be controllable by 4 different selections of randomisation which will be:
   * Totally Random Grade Selection 
   * Randomly selected results bounded by only combinations that result in a Final Pass Grade
   * Randomly selected results bounded by only combinations that result in a Final merit Grade
   * Randomly selected results bounded by only combinations that result in a Final distinction Grade
+
+  ![Random Buttons](docs/readme-images/randomise-buttons.png)
 
 
 
@@ -86,12 +110,17 @@ __4.__ The Calculator will also be controllable by 4 different selections of ran
 __5.__ About/Useful Links Page/Contact Form
   * Links to pre-existing Days Until calculator (originally planned to be constructed from scratch on this site, but scope creep was reigned in since this functionality has been done many times before.)
   * Other Useful Links such as to Code Institute Website / Useful Subreddits etc.
-  
-__6.__	A small footer with copyright and site info on all pages. Looks clean and unintrusive, but clear when read.
+  * All links highlight appropriately when hovered.
 
-### __Color Scheme__
-A lighter color scheme with orange/light grey/ and white featured https://coolors.co/ea7600-ececec-717575-ffc180-ffffff 
-Site is responsive and adapts to smaller screen sizes while maintaining structure and clarity (even down to extremely small phone sizes.
+    ![Useful Links Section](docs/readme-images/useful-links-wide.png)
+
+  
+__6.__	A footer area at the bottom of the site with featuring links to other relevant websites made by this sites creator. Looks clean and unintrusive, but clear when read. These include:
+
+  * A logo link to the project creator's github page.
+  * A logo link to the projects's actual Twitter page for any updates that fans of the site may wish to follow.
+  * A logo link to the projects's actual Youtube page for any videos that the site creator may make in relation to this project (Usage tutorials, other tips etc) that fans of the site may be interested in.
+  * A attribution link required by the source of the favicon used in the site.
 
 ### __Technology Used__
 
@@ -104,24 +133,39 @@ Site is responsive and adapts to smaller screen sizes while maintaining structur
 7.  Chrome              Used as alt browser of the project (Testing, Dev Tools)     https://www.google.com/intl/en_ie/chrome/
 8.  Grammarly           Used to proof this page.                                    https://app.grammarly.com
 9.  FontAwesome         Source of fonts used in website.                            https://fontawesome.com/
-10.  Unsplash            Source of copyright-free images used in website.            https://unsplash.com/
-11.  Pexels             Source of copyright-free images used in website.            https://www.pexels.com/
+10. Coolors             Color Palette Generator used in planning                    https://coolors.co/ea7600-ececec-717575-ffc180-ffffff
+11. MsPaint             For rapid cropping of screenshot images for readme
+11. WordCounter         For assitance staying under 50 char recommended git commit length  https://wordcounter.net/character-count
 
-### __Existing Features__
+### __Possible Future Features to Implement__
+Ideas for future possible Features include;
 
-### __Features Left to Implement__
+__1.__ A page or section to enter your email on the webiste and have the website email you a formatted version of the currently selected projected grades, for those who want a static saved version for reference. Perhaps this could be outputted instead as a text based ASCII table in a expandable section/modal, for easy copy pasting.
 
-## Testing
-### Validator Testing
+__2.__ A homebrew "days until calculator" that allows students to input their upcoming project dates (Potentially all 5 at once) and see the remaining time between and until each project. This information could be displayed in multiple (selectable?) formats.
+
+
+## __Testing__
+### __Validator Testing__
 __HTML__
+
 __CSS__
+
 __Javascript__
+
+### Bugs Encountered
+
 ### Unfixed Bugs
 
 ## __Credits__
 ### Content
 Misc reference 
 https://www.w3schools.com/css/
+
+Color Palett Generator
+https://coolors.co/ea7600-ececec-717575-ffc180-ffffff 
+Color Palett Inspiration
+
 
 ### Media
 

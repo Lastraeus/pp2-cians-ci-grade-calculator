@@ -251,7 +251,6 @@ function randomiseResults(whichButton) {
     updateSelectors()
 };
 
-
 /**
  * sets each td text in points column to equivlent int from pointsArray
  * @param {Array} pointsArray Contains an array of each points value awarded by each grade, in project order.
