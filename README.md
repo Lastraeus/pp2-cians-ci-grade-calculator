@@ -180,6 +180,13 @@ These relate to the use of Constructors in a foreach function to add unique clic
     let tablePointsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(4)");
     let tableTotalsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(5)");
 
+ __3.__ 
+
+    I noticed that despite showing in my gitpod live python3 testing server site, that the favicon I added wasn't displaying on Github pages. I found
+  [This article](https://sneha-herle.medium.com/favicon-working-on-localhost-but-not-on-github-pages-6c7b9e947504) 
+    
+    discussing the issue, and implemented the suggested line of code into my index.html file and pushed it to github. This resolved the issue.
+
 
 
 ### __Unfixed Bugs__
@@ -187,23 +194,60 @@ Other than the above described jshint.com warnings about my use of new construct
 
 ## __Credits__
 ### __Content__
-Misc syntax reference etc:
+__Code__
 
-https://www.w3schools.com/css/
+Rohit Sharma - My Code Institute Project Mentor - Numerous valuable insights into formatting, refactoring, commenting tips and general critique and advice for the project across almost all aspects. His contribution can't be understated and I am extremely lucky to having a mentor who constantly encourages me to improve my fundamentals as a developer. My managing to fully implement barely half his advice is the reason this project is twice as good as it would have been.
 
-https://www.w3schools.com/html/
+[Switch Statement Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 
-https://www.w3schools.com/jsref/
+[querySelectorAll usuage](https://youtu.be/D7sNpAiNMQM)
 
-Coolors.co Color Palett Generator:
+[How I summed the array of total points](https://reqbin.com/code/javascript/m81eb1ms/javascript-sum-array-example)
 
-https://coolors.co/ea7600-ececec-717575-ffc180-ffffff 
+While learning about reading selectors from various sources (below) I did not find a solution to the problem I was having applying unique listeners to multiple selector inputs. After learning more on selectors in general I came to the conclusion myself that I needed a object orientated solution to avoid masses of duplicated code for my purposes. This ended up also applying to the randomiser buttons.
 
-Color Palett Inspiration
+[Selector Reference#1](https://stackoverflow.com/questions/10911526/how-do-i-programatically-select-an-html-option-using-javascript)
 
-Gold Silver Bronze color reference (used tweaked value based on this)
+[Selector Reference#2](https://www.youtube.com/watch?v=kzFJ7St_ma8)
 
+I then combined my own understanding of classes and constructors, [reference for same](https://www.youtube.com/watch?v=5AWRivBk0Gw) and trial and error to develop the currently in use solution.
+
+[Guide to make the 3d buttons used on the site](https://www.youtube.com/watch?v=cWeWnO8XKds)
+
+[First of Two main guides on Modals I used](https://www.youtube.com/watch?v=MBaw_6cPmAw)
+
+[Second of Two main guides on Modals I used (source of the gradient fill idea)](https://www.youtube.com/watch?v=TAB_v6yBXIE)
+
+[Modal scrolling discussion](https://stackoverflow.com/questions/10476632/how-to-scroll-the-page-when-a-modal-dialog-is-longer-than-the-screen)
+
+[Guide on how to style tables that I leaned on heavily for my own grade calc table](https://www.youtube.com/watch?v=biI9OFH6Nmg)
+
+[General Responsiveness Tips 1](https://youtu.be/TUD1AWZVgQ8)
+
+[General Responsiveness Tips 2](https://www.youtube.com/watch?v=VQraviuwbzU)
+
+[General Responsiveness Tips 3](https://youtu.be/VQraviuwbzU)
+
+[nth-child pseudo selector reference](https://stackoverflow.com/questions/15639247/css-selector-for-nth-range)
+
+[Why I changed my input (button) elements to button elements](https://wordpress.org/support/topic/how-do-i-create-2-lines-of-text-on-button/)
+
+__Colors__
+
+[Coolors.co Color Palett Generator](https://coolors.co/ea7600-ececec-717575-ffc180-ffffff)
+
+[Color Palett Inspiration](https://icolorpalette.com/download/palette/443988_color_palette.jpg)
+
+[Gold Silver Bronze color reference (used tweaked value based on this)](https://www.deviantart.com/thewolfbunny64/art/Gold-Silver-and-Bronze-Color-Schemes-649070059)
+
+__Misc syntax reference etc:__
+
+[www.w3schools.com/css](https://www.w3schools.com/css/)
+
+[w3schools.com/html](https://www.w3schools.com/html/)
+
+[www.w3schools.com/jsref/](https://www.w3schools.com/jsref/)
 
 ### __Media__
 
-
+[Source of calculator favicon](https://www.flaticon.com/free-icon/calculator_303635) 
