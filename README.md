@@ -148,10 +148,14 @@ __2.__ A homebrew "days until calculator" that allows students to input their up
 ## __Testing__
 ### __Validator Testing__
 __HTML__
+No error displaying with w3 HTML validator
+https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Flastraeus.github.io%2Fpp2-cians-ci-grade-calculator%2F
 
 __CSS__
+No error found with https://jigsaw.w3.org/css-validator/validator (manual input of style.css content)
 
 __Javascript__
+
 
 ### __Bugs Encountered__
 

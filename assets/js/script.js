@@ -1,14 +1,10 @@
 const resultStrings = ["Pass", "Merit", "Distinction"];
-let selectedResults = []
+let selectedResults = [];
 let lowerCaseResults = [];
-let tableBody = document.querySelector("grade-table-body");
 let gradeSelectors = document.querySelectorAll(".grade-select");
 let sumSpan = document.querySelector("#total-result-points"); // Span where Summed Points Are displayed
-let resultP = document.querySelector("#displayed-result"); // Span where Final Grade Word is displayed
-let finalSum = sumSpan.innerText;
-let finalResult = resultP.innerText;
+let resultSpan = document.querySelector("#displayed-result"); // Span where Final Grade Word is displayed
 let randomButtons = document.querySelectorAll(".random-input-buttons");
-let buttonsNotSet = false;
 let tablePointsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(4)");
 let tableTotalsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(5)");
 let scrollTarget = document.querySelector("#scroll-to-me");
@@ -27,7 +23,7 @@ function startTableGradeSystem() {
 function tableGradeRead() {
     gradeSelectors.forEach(grade => {
         selectedResults.push(grade.value); // 
-    })
+    });
     calculateResults(selectedResults);
 }
 
@@ -38,7 +34,7 @@ function tableGradeRead() {
 function readTableGradeAfterChange() {
     gradeSelectors.forEach(grade => {
         new GradeChangeInterpreter(grade.id);
-    })
+    });
 }
 
 /**
@@ -49,11 +45,11 @@ function readTableGradeAfterChange() {
 class GradeChangeInterpreter {
     constructor(gradeId) {
 
-        let specificGradeId = document.querySelector(`#${gradeId}`)
+        let specificGradeId = document.querySelector(`#${gradeId}`);
 
         specificGradeId.addEventListener("change", e => {
-            selectedResults = []
-            tableGradeRead()
+            selectedResults = [];
+            tableGradeRead();
         });
     }
 }
@@ -85,21 +81,21 @@ function insertDataToTable(selectedResultPointsIntArray, multipliedResultsArray,
 
 /** change "pass" in an array from tableRead() to int 4, etc */
 function translateResultArray(wordResults) {
-    let translatedResults = []
+    let translatedResults = [];
     for (let result of wordResults) {
         switch (result) {
             case "pass":
-                translatedResults.push(4) //Pass is worth 4 Points
-                break
+                translatedResults.push(4); //Pass is worth 4 Points
+                break;
             case "merit":
-                translatedResults.push(6) //Merit is worth 6 Points
-                break
+                translatedResults.push(6); //Merit is worth 6 Points
+                break;
             case "distinction":
-                translatedResults.push(8) //Distinction is worth 8 Points
-                break
+                translatedResults.push(8); //Distinction is worth 8 Points
+                break;
             default:
-                translatedResults.push("Error") // Unexpected/Error case
-                break
+                translatedResults.push("Error"); // Unexpected/Error case
+                break;
         }
     }
     return translatedResults;
@@ -113,19 +109,19 @@ function translateResultArray(wordResults) {
  * @returns New Array of each lines points value multiplied by correct credit amount.
  */
 function multiplyCreditsByCases(pointsArray) {
-    let multipliedCreditsArray = []
+    let multipliedCreditsArray = [];
     for (let i = 0; i <= pointsArray.length; i++) {
         let coefficient = null;
         if (i <= 2) {
-            coefficient = 8 // First 3 Projects are 8 credits
+            coefficient = 8; // First 3 Projects are 8 credits
         } else if (i === 3) {
-            coefficient =  16 // 3rd project is 16 credits 
+            coefficient = 16; // 3rd project is 16 credits 
         } else if (i === 4) {
-             coefficient =  20 // 4th project is 20 credits 
-        } 
-        
+            coefficient = 20; // 4th project is 20 credits 
+        }
+
         if (coefficient) {
-        	multipliedCreditsArray.push((pointsArray[i]) * coefficient) 
+            multipliedCreditsArray.push((pointsArray[i]) * coefficient);
         }
     }
     return multipliedCreditsArray;
@@ -138,10 +134,10 @@ function multiplyCreditsByCases(pointsArray) {
  * @returns Array of strings all in lowercase
  */
 function toLowerCaseArray(inArrayOfStrings) {
-    let result = []
-    for (word of inArrayOfStrings) {
-        let resultWord = word.toLowerCase()
-        result.push(resultWord)
+    let result = [];
+    for (let word of inArrayOfStrings) {
+        let resultWord = word.toLowerCase();
+        result.push(resultWord);
     }
     return result;
 }
@@ -154,8 +150,8 @@ function toLowerCaseArray(inArrayOfStrings) {
 function updateSelectors() {
     gradeSelectors.forEach(grade => {
         let gradeCell = grade.parentElement;
-        let newPointsCell = gradeCell.nextElementSibling
-        let newSelection = reverseTranslateResult(newPointsCell.innerText)
+        let newPointsCell = gradeCell.nextElementSibling;
+        let newSelection = reverseTranslateResult(newPointsCell.innerText);
         for (let i = 0; i < grade.options.length; ++i) {
             if (grade.options[i].text === newSelection)
                 grade.options[i].selected = true;
@@ -171,13 +167,13 @@ function updateSelectors() {
 function reverseTranslateResult(gradeValue) {
     switch (gradeValue) {
         case "4":
-            return "Pass" //Pass is worth 4 Points
+            return "Pass"; //Pass is worth 4 Points
         case "6":
-            return "Merit" //Merit is worth 6 Points
+            return "Merit"; //Merit is worth 6 Points
         case "8":
-            return "Distinction" //Distinction is worth 8 Points
+            return "Distinction"; //Distinction is worth 8 Points
         default:
-            return "Error" // Unexpected/Error case
+            return "Error"; // Unexpected/Error case
     }
 }
 
@@ -204,7 +200,7 @@ class RandomButtonInterpreter {
         let specificButtonNode = document.querySelector(`#${button}`);
 
         specificButtonNode.addEventListener("click", e => {
-            let selectedButtonNumber = button.charAt(button.length - 1)
+            let selectedButtonNumber = button.charAt(button.length - 1);
             randomiseResults(selectedButtonNumber);
 
             scrollTarget.scrollIntoView({
@@ -221,10 +217,10 @@ class RandomButtonInterpreter {
  * @param {*} whichButton passes correct ID number of the the specific randomiser button (the final character of the button's ID)
  */
 function randomiseResults(whichButton) {
-    newLowerCaseResults = []
-    for (i = 0; i < selectedResults.length; i++) {
+    let newLowerCaseResults = [];
+    for (let i = 0; i < selectedResults.length; i++) {
         let random = (Math.floor(Math.random() * lowerCaseResults.length));
-        newLowerCaseResults.push(lowerCaseResults[random])
+        newLowerCaseResults.push(lowerCaseResults[random]);
     }
     calculateResults(newLowerCaseResults);
 
@@ -232,24 +228,24 @@ function randomiseResults(whichButton) {
         case "0":
             break;
         case "1":
-            if (!(resultP.innerText === "Pass")) {
-                randomiseResults("1")
+            if (resultSpan.innerText !== "Pass") {
+                randomiseResults("1");
             }
             break;
         case "2":
-            if (!(resultP.innerText === "Merit")) {
-                randomiseResults("2")
+            if (resultSpan.innerText !== "Merit") {
+                randomiseResults("2");
             }
             break;
         case "3":
-            if (!(resultP.innerText === "Distinction")) {
-                randomiseResults("3")
+            if (resultSpan.innerText !== "Distinction") {
+                randomiseResults("3");
             }
             break;
     }
 
-    updateSelectors()
-};
+    updateSelectors();
+}
 
 /**
  * sets each td text in points column to equivlent int from pointsArray
@@ -260,7 +256,7 @@ function insertPointsToTable(pointsArray) {
     tablePointsNodes.forEach(pointsCell => {
         pointsCell.innerText = pointsArray[i];
         i++;
-    })
+    });
 }
 
 /**
@@ -273,7 +269,7 @@ function insertTotalsToTable(multipliedTotalsArray) {
     tableTotalsNodes.forEach(totalsCell => {
         totalsCell.innerText = multipliedTotalsArray[i];
         i++;
-    })
+    });
 }
 
 /** 
@@ -292,13 +288,12 @@ function insertSumToPage(inSum) {
  */
 function insertResultToPage(inSum) {
     if (inSum <= 311) {
-        resultP.innerText = resultStrings[0];
+        resultSpan.innerText = resultStrings[0];
     } else if (inSum <= 383) {
-        resultP.innerText = resultStrings[1];
+        resultSpan.innerText = resultStrings[1];
     } else {
-        resultP.innerText = resultStrings[2];
+        resultSpan.innerText = resultStrings[2];
     }
-    resultP.innerText
 }
 
 /** 

@@ -130,7 +130,7 @@ p {
 }
 
 #modal-title {
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .modal-header .close-button {
@@ -165,8 +165,8 @@ p {
     right: 0;
     bottom: 0;
     pointer-events: none;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,0.9) 17%, rgba(234,118,0,0.9) 55%, rgba(140,71,0,0.9) 84%); 
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 17%, rgba(234, 118, 0, 0.9) 55%, rgba(140, 71, 0, 0.9) 84%);
 }
 
 #overlay.active {
@@ -361,6 +361,7 @@ footer {
     border: 2px solid var(--color-mellow-apricot);
     color: var(--color-mellow-apricot);
 }
+
 /* Media Queries/Responsiveness */
 @media (max-width: 310px) {
     #grade-calc-section {
