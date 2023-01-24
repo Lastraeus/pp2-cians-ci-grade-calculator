@@ -1,6 +1,6 @@
-let openModalButtons = document.querySelectorAll('[data-modal-target]')
-let closeModalButtons = document.querySelectorAll('[data-close-button]')
-let modalOverlay = document.getElementById('overlay')
+let openModalButtons = document.querySelectorAll('[data-modal-target]');
+let closeModalButtons = document.querySelectorAll('[data-close-button]');
+let modalOverlay = document.getElementById('overlay');
 
 /**
  * Adds the "active" class to the passed Node value, to show the modal and modal overlay.
@@ -32,10 +32,10 @@ function closeModal(modal) {
 function addOpenModalListener() {
   openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
-      let modal = document.querySelector(button.dataset.modalTarget)
-      openModal(modal)
-    })
-  })
+      let modal = document.querySelector(button.dataset.modalTarget);
+      openModal(modal);
+    });
+  });
 }
 
 /**
@@ -46,10 +46,10 @@ function addOpenModalListener() {
 function addCloseModalListener() {
   closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
-      let modal = button.closest('.modal')
-      closeModal(modal)
-    })
-  })
+      let modal = button.closest('.modal');
+      closeModal(modal);
+    });
+  });
 }
 
 /**
@@ -58,11 +58,11 @@ function addCloseModalListener() {
  */
 function addCloseModalOverlayListener() {
   modalOverlay.addEventListener('click', () => {
-    let modals = document.querySelectorAll('.modal.active')
+    let modals = document.querySelectorAll('.modal.active');
     modals.forEach(modal => {
-      closeModal(modal)
-    })
-  })
+      closeModal(modal);
+    });
+  });
 }
 
 /**

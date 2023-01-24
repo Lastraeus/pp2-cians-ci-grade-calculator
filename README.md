@@ -155,11 +155,17 @@ __CSS__
 No error found with https://jigsaw.w3.org/css-validator/validator (manual input of style.css content)
 
 __Javascript__
-Two warnings were found with the https://jshint.com/ JS validator.
+ __https://jshint.com/ JS validator (Manual input of script.js)__
+
+Two warnings were found:
 38	Do not use 'new' for side effects.
 187	Do not use 'new' for side effects
 
 These relate to the use of Constructors in a foreach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be intialized once to complete the unique ID setup process, it was deemed unnessary by the developer to create a system to save each individual new instance as a seperate variable before passing it to the overarching foreach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have lead to unnecessary complexity.
+
+ __https://jshint.com/ JS validator (Manual input of modal-script.js)__
+ 
+ No errors found.
 
 ### __Bugs Encountered__
  __1.__ 
