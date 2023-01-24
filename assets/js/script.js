@@ -27,14 +27,21 @@ function tableGradeRead() {
     calculateResults(selectedResults);
 }
 
+
+/**
+ * Make a unique GradeChangeInterpreter object from a passed element's ID attribute.
+ * @param {Element} grade selector node
+ */
+function makeUniqueGradeChangeInterpreter(grade) {
+    new GradeChangeInterpreter(grade.id);
+}
+
 /**
  * This function cycles through each node in the nodelist of "grade" selector elements
- * and makes a new unique instance of GradeChangeInterpreter class from it's id attribute.
+ * and makes passes it to makeUniqueGradeChangeInterpreter to make a unique GradeChangeInterpreter object from it's id attribute.
  */
 function readTableGradeAfterChange() {
-    gradeSelectors.forEach(grade => {
-        new GradeChangeInterpreter(grade.id);
-    });
+    gradeSelectors.forEach(makeUniqueGradeChangeInterpreter);
 }
 
 /**
@@ -161,7 +168,7 @@ function updateSelectors() {
 
 /**
  * Takes a vaule from the points table and returns it's equivilant grade value string.
- * @param {*} gradeValue 
+ * @param {number} gradeValue 
  * @returns strings of "Pass", "Merit","Distinction" depending on case or "Error" in event of invalid case.
  */
 function reverseTranslateResult(gradeValue) {
@@ -178,12 +185,18 @@ function reverseTranslateResult(gradeValue) {
 }
 
 /**
+ * Make a unique RandomButtonInterpreter object from a passed element's ID attribute.
+ * @param {Element} randomiser button node
+ */
+function makeUniqueRandomButtonInterpreter(button) {
+    new RandomButtonInterpreter(button.id);
+}
+
+/**
  * This function creates a RandomButtonInterpreter() class object for each button, to facilitate unique button specfic listeners.
  */
 function initializeRandomButtons() {
-    randomButtons.forEach(button => {
-        new RandomButtonInterpreter(button.id);
-    });
+    randomButtons.forEach(makeUniqueRandomButtonInterpreter);
 }
 
 /**
@@ -214,7 +227,7 @@ class RandomButtonInterpreter {
  * Runs the correct randomise algorithm depending on which button was pressed. Then runs updateSelectors() to push changes to page.
  * Reruns the bounded final pass, final merit etc cases until the desired result is generated.
  * 
- * @param {*} whichButton passes correct ID number of the the specific randomiser button (the final character of the button's ID)
+ * @param {number} whichButton passes correct ID number of the the specific randomiser button (the final character of the button's ID)
  */
 function randomiseResults(whichButton) {
     let newLowerCaseResults = [];

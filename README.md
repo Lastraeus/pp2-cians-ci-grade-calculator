@@ -155,11 +155,35 @@ __CSS__
 No error found with https://jigsaw.w3.org/css-validator/validator (manual input of style.css content)
 
 __Javascript__
+Two warnings were found with the https://jshint.com/ JS validator.
+38	Do not use 'new' for side effects.
+187	Do not use 'new' for side effects
 
+These relate to the use of Constructors in a foreach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be intialized once to complete the unique ID setup process, it was deemed unnessary by the developer to create a system to save each individual new instance as a seperate variable before passing it to the overarching foreach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have lead to unnecessary complexity.
 
 ### __Bugs Encountered__
+ __1.__ 
+
+    When developing the live updating table with grade column selector options, I initially set up the script.js so that a foreach was run on each of the selector elements and would add a listener to each that updated the table values on that row to match the new selected option. 
+    This led to a bug where the same listener was applied to each selector(in each row) simultaneously. After some research I developed a object-orientated part of the system using classes to construct individual objects for each selector based on their unique ID attributes, and used that set up unique listeners within the class, so each specific selector now would only affect the intended row.
+
+    This issue came up again when developing the randomiser buttons, as each needed a unique listener to pass the correct value to the randomiseResults() function. This was solved with the same methodology as above, constructing unique id-attribute based objects for each that created seperate listeners for each button.
+ 
+ __2.__ 
+
+    When I was adding the (previously freestanding) "Total Points/final results" row to the end of the grade calc table, I encountered a bug where the cell in question where the Total Points/final results were to be inserted was throwing a undefined/adding an "error" code from my function cases instead of the previously functional insert into the previously freestanding results spans.
+
+    I realized then that this was due to the selectors for all values to be calculated was stored as variables that queryselected all available rows for use in calculation arrays.
+
+    I solved this by researching how to limit the querSelectorAll selectors to only look for the first 5 rows(For each project line) leaving the total/final row out of the calculations.  Using the following updated variables;
+
+    let tablePointsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(4)");
+    let tableTotalsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(5)");
+
+
 
 ### __Unfixed Bugs__
+Other than the above described jshint.com warnings about my use of new constructors as a "side effect" of a function, which I believed to be justified in these instances, I am not aware of any outstanding bugs.
 
 ## __Credits__
 ### __Content__
