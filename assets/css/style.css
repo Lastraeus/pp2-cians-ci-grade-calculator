@@ -402,9 +402,12 @@ footer {
 }
 
 @media (max-width: 380px) {
-
     #grade-table th,
     #grade-table td {
         padding: 0.5rem 0.2rem;
+    }
+
+    #favicon-attribution-link{
+        border: none;
     }
 }
