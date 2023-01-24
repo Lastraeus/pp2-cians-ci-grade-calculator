@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ae0900deec.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Cian's Code Institute Final Grade Calculator</title>
 </head>
 
@@ -86,8 +86,10 @@
                     <br>
                     <table id="credit-explanation-table" class="explanation-tables center">
                         <thead>
-                            <th>Module</th>
-                            <th>Credit Points</th>
+                            <tr>
+                                <th>Module</th>
+                                <th>Credit Points</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>
@@ -135,7 +137,10 @@
                     <br>
                     <table id="points-per-grade-table" class="explanation-tables center">
                         <thead>
-                            <th>Points Per Grade</th>
+                            <tr>
+                                <th>Grade</th>
+                                <th>Points Per Grade</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>
@@ -167,7 +172,10 @@
                     <br>
                     <table id="grade-bands-table" class="explanation-tables center">
                         <thead>
-                            <th>Grade Bands</th>
+                            <tr>
+                                <th>Grade</th>
+                                <th>Grade Bands</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>
@@ -306,23 +314,23 @@
                         <td></td>
                         <td class="large-to-hide"></td>
                         <td>
-                            <p id="result-text">
-                                Total Points of:
+                            <div id="result-text">
+                                <p>Points of:</p>
                                 <br>
                                 <p>___________</p>
                                 <br>
-                                Final Result:
-                            </p>
+                                <p>Final Result:</p>
+                            </div>
                         </td>
                         <td class="large-to-hide"></td>
                         <td>
-                            <span id="total-result-points">240</span>
+                            <p><span id="total-result-points">240</span></p>
                             <br>
                             <!-- 11 underscores to maintain constant content width upon grade change -->
                             <!-- 11 == length of "Distinction" -->
                             <p>___________</p>
                             <br>
-                            <span id="displayed-result">Pass</span>
+                            <p><span id="displayed-result">Pass</span></p>
                         </td>
                     </tr>
                 </tbody>

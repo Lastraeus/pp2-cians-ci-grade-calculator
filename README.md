@@ -153,20 +153,29 @@ __CSS__
 
 __Javascript__
 
-### Bugs Encountered
+### __Bugs Encountered__
 
-### Unfixed Bugs
+### __Unfixed Bugs__
 
 ## __Credits__
-### Content
-Misc reference 
+### __Content__
+Misc syntax reference etc:
+
 https://www.w3schools.com/css/
 
-Color Palett Generator
+https://www.w3schools.com/html/
+
+https://www.w3schools.com/jsref/
+
+Coolors.co Color Palett Generator:
+
 https://coolors.co/ea7600-ececec-717575-ffc180-ffffff 
+
 Color Palett Inspiration
 
+Gold Silver Bronze color reference (used tweaked value based on this)
 
-### Media
+
+### __Media__
 
 
