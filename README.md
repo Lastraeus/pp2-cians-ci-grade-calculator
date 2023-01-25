@@ -1,6 +1,6 @@
 # Cian's Code Institute Final Grade Calculator - PP2:
 
-![Main Image (Calculator Section)](docs/readme-images/intro-image-large.png)
+![Main Image (Calculator Section)](docs/readme-images/full-page-widescreen-v2.png)
 
 ## [Link to live website](https://lastraeus.github.io/pp2-cians-ci-grade-calculator/)
 
