@@ -146,6 +146,41 @@ __2.__ A homebrew "days until calculator" that allows students to input their up
 
 
 ## __Testing__
+### __General Testing Process__
+Primary testing through the development process was done via the Gitpod python server command
+    python3 -m http.server
+to host a browser window of the site. Upon saving changes in gitpod, I would refresh the relevant browser window to see updated changes live. I would make the server public in the gitpod bottom toolbar to test it on foreign browsers (EG chrome, edge)
+
+I would then test to see that changes reflected design intent. (IE check newly added links work, elements are positioned correctly, table calculations tally correctly, buttons work, etc)
+
+Resizing browser with CTRL-SHIFT-M on firefox to see responsive-design-mode. Checked down to sub 280px (Galaxy Fold). Resized in Chrome Dev Tools CTRL-SHIFT-I. Checked down to sub 280px (galaxy fold)
+Resized in Edge Dev Tools. Checked down to sub 280px (galaxy fold)
+
+Inspecting any unexpected or hard-to-diagnose bugs with the inspect source feature in firefox/chrome. Tweaking variables with Chrome Dev tools to see changes live and help diagnose problem.
+
+The result of testing each and every part of the site was deemed satisfactory when user received:
+    - confirmation that the site layout is as the design intended. 
+    - confirmation that the site features are fully functional. 
+    - confirmation that the site layout adapts as designed dynamically based on the screen size.
+    - confirmation that the site content is appropriate to higher organizational goals.
+
+### __Hardware__
+This application was tested primarily tested using;
+  * my Desktop PC (Windows 10 1440p widescreen monitor) (Firefox & Chrome)
+  * My Google Pixel 6a Phone (firefox)
+
+### __Software__
+
+The application was tested with:
+
+Up to date Firefox (Windows 10 ver 109.0 Firefox Release January 17, 2023) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to less than 400px emulating Pixel 5 and free responsiveness mode to go to less than 280px wide. Using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
+
+Up to date Chrome (Windows 10 Version 109.0.5414.120 (Official Build) (64-bit)) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide. Occasionally using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
+
+Up to date Edge browser (Windows 10 Version 109.0.1518.61 (Official build) (64-bit)) - Using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide.
+
+
+
 ### __Validator Testing__
 __HTML__
 No error displaying with w3 HTML validator
@@ -164,7 +199,7 @@ Two warnings were found:
 These relate to the use of Constructors in a foreach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be intialized once to complete the unique ID setup process, it was deemed unnessary by the developer to create a system to save each individual new instance as a seperate variable before passing it to the overarching foreach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have lead to unnecessary complexity.
 
  __https://jshint.com/ JS validator (Manual input of modal-script.js)__
- 
+
  No errors found.
 
 ### __Bugs Encountered__
@@ -197,6 +232,26 @@ These relate to the use of Constructors in a foreach function to add unique clic
 
 ### __Unfixed Bugs__
 Other than the above described jshint.com warnings about my use of new constructors as a "side effect" of a function, which I believed to be justified in these instances, I am not aware of any outstanding bugs.
+
+## __Deployment__
+The site was developed using Gitpods Browser Workspace. This was done by:
+
+1. Creating an account with GitHub and creating a GitHub repository with the project name.
+
+2. Navigate to the Gitpod browser extension and install it. I used [the firefox version](https://addons.mozilla.org/en-GB/firefox/addon/gitpod/)
+
+3. Navigate to the project repository and use the new green "gitpod" button to create a workspace based on the repository.
+
+4. Select "more options" and then "open in browser". This will lead you to the workspace after initial loading.
+
+
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+1. In the GitHub repository, navigate to the Settings tab
+
+2. Navigate to the pages tab.
+
+3. Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. [link to live site](https://lastraeus.github.io/pp2-cians-ci-grade-calculator)
 
 ## __Credits__
 ### __Content__
