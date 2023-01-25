@@ -57,7 +57,11 @@ This was used throughout project development as a guide to color styling.
 Barlow and Asap were chosen from https://fonts.google.com/ as title and main text fonts, due to their clean solid look.
 
 ## __Features__
-A single-page website featuring:
+A single-page website that is responsive down to extremely small screen sizes.
+
+![Small/Mobile Version of the site](docs/readme-images/full-page-small-screen.png)
+
+__Featuring:__
 
 __1.__  A title, Nav Bar, and intro blurb for the site. Responsive down to extremely small sizes.
 
@@ -191,7 +195,7 @@ No error displaying with w3 HTML validator
 https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Flastraeus.github.io%2Fpp2-cians-ci-grade-calculator%2F
 
 __CSS__
-No error was found with https://jigsaw.w3.org/css-validator/validator (manual input of style.css content)
+No error was found with https://jigsaw.w3.org/css-validator/#validate_by_input (manual input of style.css content)
 
 __Javascript__
  __https://jshint.com/ JS validator (Manual input of script.js)__
@@ -215,28 +219,28 @@ I ran the chrome lighthouse test on the site and received extremely high scores.
 ### __Bugs Encountered__
  __1.__ 
 
-    When developing the live updating table with grade column selector options, I initially set up the script.js so that a forEach was run on each of the selector elements and would add a listener to each that updated the table values on that row to match the newly selected option. 
-    This led to a bug where the same listener was applied to each selector(in each row) simultaneously. After some research I developed an object-orientated part of the system using classes to construct individual objects for each selector based on their unique ID attributes and used that to set up unique listeners within the class, so each specific selector now would only affect the intended row.
+  When developing the live updating table with grade column selector options, I initially set up the script.js so that a forEach was run on each of the selector elements and would add a listener to each that updated the table values on that row to match the newly selected option. 
+  This led to a bug where the same listener was applied to each selector(in each row) simultaneously. After some research I developed an object-orientated part of the system using classes to construct individual objects for each selector based on their unique ID attributes and used that to set up unique listeners within the class, so each specific selector now would only affect the intended row.
 
-    This issue came up again when developing the randomiser buttons, as each needed a unique listener to pass the correct value to the randomiseResults() function. This was solved with the same methodology as above, constructing unique id-attribute-based objects for each that created separate listeners for each button.
- 
+  This issue came up again when developing the randomiser buttons, as each needed a unique listener to pass the correct value to the randomiseResults() function. This was solved with the same methodology as above, constructing unique id-attribute-based objects for each that created separate listeners for each button.
+
  __2.__ 
 
-    When I was adding the (previously freestanding) "Total Points/final results" row to the end of the grade calc table, I encountered a bug where the cell in question where the Total Points/final results were to be inserted was throwing an undefined/adding an "error" code from my function cases instead of the previously functional insert into the previously freestanding results spans.
+  When I was adding the (previously freestanding) "Total Points/final results" row to the end of the grade calc table, I encountered a bug where the cell in question where the Total Points/final results were to be inserted was throwing an undefined/adding an "error" code from my function cases instead of the previously functional insert into the previously freestanding results spans.
 
-    I realized then that this was due to the selectors for all values to be calculated being stored as variables that queryselected all available rows for use in calculation arrays.
+  I realized then that this was due to the selectors for all values to be calculated being stored as variables that queryselected all available rows for use in calculation arrays.
 
-    I solved this by researching how to limit the querSelectorAll selectors to only look for the first 5 rows(For each project line) leaving the total/final row out of the calculations.  Using the following updated variables;
+  I solved this by researching how to limit the querSelectorAll selectors to only look for the first 5 rows(For each project line) leaving the total/final row out of the calculations.  Using the following updated variables;
 
-    let tablePointsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(4)");
-    let tableTotalsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(5)");
+  let tablePointsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(4)");
+  let tableTotalsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(5)");
 
  __3.__ 
 
-    I noticed that despite showing in my gitpod live python3 testing server site, the favicon I added wasn't displaying on Github pages. I found
+  I noticed that despite showing in my gitpod live python3 testing server site, the favicon I added wasn't displaying on Github pages. I found
   [This article](https://sneha-herle.medium.com/favicon-working-on-localhost-but-not-on-github-pages-6c7b9e947504) 
     
-    discussing the issue, implemented the suggested line of code into my index.html file, and pushed it to Git Hub. This resolved the issue.
+  discussing the issue, implemented the suggested line of code into my index.html file, and pushed it to Git Hub. This resolved the issue.
 
 
 ### __Unfixed Bugs__
