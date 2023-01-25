@@ -52,7 +52,7 @@ body {
 }
 
 p {
-    max-width: 260px;
+    max-width: 70%;
     margin: 0 auto;
 }
 
@@ -84,7 +84,6 @@ p {
 
 .menu a:hover,
 .menu a:focus {
-
     border: 2px solid var(--color-princeton-orange);
     color: var(--color-princeton-orange);
 }
@@ -93,6 +92,10 @@ p {
 /* Grade Calc Intro Section */
 #grade-calc-section {
     max-width: fit-content;
+}
+
+#grade-calc-header {
+    max-width: 50rem;
 }
 
 #intro-calc-content {
@@ -222,7 +225,7 @@ p {
     box-shadow: 0.2rem 0.2rem 0 var(--color-gold-darker);
 }
 
-/* Final Grace Calculator Table */
+/* Final Grade Calculator Table */
 #grade-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -254,7 +257,6 @@ p {
     text-align: center;
     padding: 0px 2px 0px 12px;
     cursor: pointer;
-
 }
 
 #grade-table tbody tr {
@@ -363,12 +365,6 @@ footer {
 }
 
 /* Media Queries/Responsiveness */
-@media (max-width: 310px) {
-    #grade-calc-section {
-        max-width: 96%;
-    }
-}
-
 @media (max-width: 600px) {
     .large-to-hide {
         display: none;
@@ -407,7 +403,22 @@ footer {
         padding: 0.5rem 0.2rem;
     }
 
-    #favicon-attribution-link{
+    #favicon-attribution-link {
         border: none;
+    }
+}
+
+@media (max-width: 900px) {
+    p {
+        max-width: 95%;
+    }
+
+    #grade-calc-header {
+        max-width: 90%;
+    }
+
+    #grade-calc-section {
+        max-width: 96%;
+        padding: 4%;
     }
 }

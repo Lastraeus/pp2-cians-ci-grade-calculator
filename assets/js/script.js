@@ -9,6 +9,13 @@ let tablePointsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n
 let tableTotalsNodes = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td:nth-of-type(5)");
 let scrollTarget = document.querySelector("#scroll-to-me");
 
+// START UP FUNCTIONS SECTION
+
+/** 
+ * Wait for the DOM to finish loading, then run the initial system.
+ * */
+document.addEventListener("DOMContentLoaded", startTableGradeSystem);
+
 /** starts the table reading and update systems */
 function startTableGradeSystem() {
     tableGradeRead();
@@ -16,6 +23,8 @@ function startTableGradeSystem() {
     lowerCaseResults = toLowerCaseArray(resultStrings);
     initializeRandomButtons();
 }
+
+// TABLE READ AND CALCULATION SECTION
 
 /**
  * Creates an array of the currently selected calculator options then passes them to calculateResults().
@@ -26,7 +35,6 @@ function tableGradeRead() {
     });
     calculateResults(selectedResults);
 }
-
 
 /**
  * Make a unique GradeChangeInterpreter object from a passed element's ID attribute.
@@ -76,14 +84,6 @@ function calculateResults(rawResults) {
         return a + b;
     });
     insertDataToTable(selectedResultPointsIntArray, multipliedResultsArray, sumTotalPoints);
-}
-
-/** Insert all the arrays and figures back into the html table*/
-function insertDataToTable(selectedResultPointsIntArray, multipliedResultsArray, sumTotalPoints) {
-    insertPointsToTable(selectedResultPointsIntArray);
-    insertTotalsToTable(multipliedResultsArray);
-    insertSumToPage(sumTotalPoints);
-    insertResultToPage(sumTotalPoints);
 }
 
 /** change "pass" in an array from tableRead() to int 4, etc */
@@ -150,7 +150,7 @@ function toLowerCaseArray(inArrayOfStrings) {
 }
 
 /**
- * Reads the points cells next to any given grade selector (run after they're updated by randomise buttons process),
+ * Reads the points cells next to any given grade selector (run after updated by randomise buttons process),
  * translates the new points cell value into the relevant selection option,
  * sets that value as the currently displayed/selected option for the selector dropdown.
  */
@@ -167,7 +167,7 @@ function updateSelectors() {
 }
 
 /**
- * Takes a vaule from the points table and returns it's equivilant grade value string.
+ * Takes a value from the points table and returns its equivilant grade value string.
  * @param {number} gradeValue 
  * @returns strings of "Pass", "Merit","Distinction" depending on case or "Error" in event of invalid case.
  */
@@ -183,6 +183,8 @@ function reverseTranslateResult(gradeValue) {
             return "Error"; // Unexpected/Error case
     }
 }
+
+// RANDOM BUTTON SECTION
 
 /**
  * Make a unique RandomButtonInterpreter object from a passed element's ID attribute.
@@ -260,8 +262,10 @@ function randomiseResults(whichButton) {
     updateSelectors();
 }
 
+// INSERT DATA TO TABLE / UPDATE TABLE SECTION
+
 /**
- * sets each td text in points column to equivlent int from pointsArray
+ * Sets each td text in points column to equivlent int from pointsArray
  * @param {Array} pointsArray Contains an array of each points value awarded by each grade, in project order.
  */
 function insertPointsToTable(pointsArray) {
@@ -273,7 +277,7 @@ function insertPointsToTable(pointsArray) {
 }
 
 /**
- * sets each td text in totals column to equivlent int from multipliedTotalsArray.
+ * Sets each td text in totals column to equivlent int from multipliedTotalsArray.
  * 
  * @param {Array} multipliedTotalsArray Contains an array of total value of (points per grade * credits per project), in project order.
  */
@@ -309,7 +313,10 @@ function insertResultToPage(inSum) {
     }
 }
 
-/** 
- * Wait for the DOM to finish loading, then run the initial system
- * */
-document.addEventListener("DOMContentLoaded", startTableGradeSystem);
+/** Insert all the arrays and figures back into the html table*/
+function insertDataToTable(selectedResultPointsIntArray, multipliedResultsArray, sumTotalPoints) {
+    insertPointsToTable(selectedResultPointsIntArray);
+    insertTotalsToTable(multipliedResultsArray);
+    insertSumToPage(sumTotalPoints);
+    insertResultToPage(sumTotalPoints);
+}
