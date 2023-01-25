@@ -84,6 +84,7 @@ p {
 
 .menu a:hover,
 .menu a:focus {
+
     border: 2px solid var(--color-princeton-orange);
     color: var(--color-princeton-orange);
 }

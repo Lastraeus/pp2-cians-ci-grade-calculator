@@ -5,14 +5,14 @@
 ## [Link to live website](https://lastraeus.github.io/pp2-cians-ci-grade-calculator/)
 
 ## __Purpose of the Project__
-To create a website that allows Code Institute students (studying the Full Stack Development Course) to simulate what Final Grade they might get by either manually inputting potential Project Grades, or randomly generating possible grades (In various configurations) to generate a corresponding Final Grade. 
+To create a website that allows Code Institute students (studying the Full Stack Development Course) to simulate what final grade they might get by either manually inputting potential project grades, or randomly generating possible grades (In various configurations) to generate a corresponding final grade. 
 
-Additional Useful information can be provided to the user such as a breakdown of what each project is worth and links to pre-existing “Days until” calculators(to see the time left before deadlines in a more practical format) and other useful websites.
+Additional useful information can be provided to the user such as a breakdown of what each project is worth and links to pre-existing “Days until” calculators(to see the time left before deadlines in a more practical format) and other useful websites.
 
 ## __Research__
 __Understanding the Target Problem__
 
-The below image is from a snippet of the assessment rules copied from the Official assessment guide for the course, found in the Code Institute website learning environment.
+The below image is from a snippet of the assessment rules copied from the official assessment guide for the course, found in the Code Institute website learning environment.
 
 Understanding the various components of the final grade calculation and bearing them in mind, allowed me to focus the project on automating the calculation process and allowing rapid simulation of different grade combinations and their final grade outcomes.
 
@@ -20,16 +20,16 @@ Understanding the various components of the final grade calculation and bearing 
 
 __Audience Needs/Stories__
 
-“It can be difficult to figure out how much each project grade impacts the final grade at the end of the course”
+“It can be difficult to figure out how much each project grade impacts the final grade at the end of the course.”
 
 “I’d love to see a clearer breakdown of how my previous projects have impacted my potential final grade.”
 
-"Having to manually calculate your past grades and potential future ones can be difficult/tedious and time-consuming, especially to repeat for different combinations"
+"Having to manually calculate your past grades and potential future ones can be difficult/tedious and time-consuming, especially to repeat for different combinations."
 
 __Search For Similar Sites__
 
 I inspected some websites found on google searches for possible similar projects/solutions I might not have thought of but the calculators I found were suited instead to other types of systems and courses.
-* [Link to an inappropriate Final Grade Calculator which is based on both percentages & Letter Grades](https://www.rapidtables.com/calc/grade/final-grade-calculator.html)
+* [Link to an inappropriate Final Grade Calculator which is based on both percentages & letter grades](https://www.rapidtables.com/calc/grade/final-grade-calculator.html)
 
 I had an interest in developing additional site functionality non-specific to this course, such as a day's until calculator but this proved to be an exceptionally well-trodden road and I narrowed down the project scope to the unsolved problem of the Code Institute grade calculator, and simply link to an existing "Days until calculator" instead of re-inventing the wheel.
 
@@ -38,16 +38,16 @@ I initially planned a version of the calculator page for both desktop and mobile
 
   ![Large Calculator Wireframe](docs/readme-images/wireframe-main-calc-page-desktop.png)
 
-  ![Large Calculator Wireframe](docs/readme-images/wireframe-main-calc-page-smartphone.png)
+  ![Small Calculator Wireframe](docs/readme-images/wireframe-main-calc-page-smartphone.png)
 
-  ![Large Calculator Wireframe](docs/readme-images/wireframe-potential-days-until-calculator-desktop.png)
+  ![Large Days Until Wireframe](docs/readme-images/wireframe-potential-days-until-calculator-desktop.png)
 
-As the project developed the secondary page was decided to be beyond project scope (and was well-trodden functionality available elsewhere to a high standard), and the implementation of the Grade Table and other elements resulted in a less drastic difference between the layout needed for the mobile size version.
+As the project developed the secondary page was decided to be beyond project scope (and was well-trodden functionality available elsewhere to a high standard), and the implementation of the grade table and other elements resulted in a less drastic difference between the layout needed for the mobile size version.
 
 The secondary page was then added instead as a useful links section under the calculator.
 
 ### __Color Scheme__
-A lighter color scheme was developed for the site featuring Orange (my favorite color!). It featured; a bold orange base background, light grey content boxes, dark grey text, apricot(light orange/beige) for certain highlighting, and white for some large text.
+A lighter color scheme was developed for the site featuring orange (the objectively best color!). It featured; a bold orange base background, light grey content boxes, dark grey text, apricot(light orange/beige) for certain highlighting, and white for some large text.
 
 This was used throughout project development as a guide to color styling.
 
@@ -63,9 +63,11 @@ A single-page website that is responsive down to extremely small screen sizes.
 
 __Featuring:__
 
-__1.__  A title, Nav Bar, and intro blurb for the site. Responsive down to extremely small sizes.
+__1.__  A Title, Nav Bar, and Intro Blurb for the site.
 
-   *  Responsive Main Logo and nav bar. The Nav Buttons quickly scroll users to relevant sections which may be offscreen and facilitates bookmarking.) Nav buttons include hover highlighting for UX/aesthetic considerations. Logo line spacing shrinks as well as Nav Buttons change from text to icons at smaller sizes.
+   *  Responsive main Logo and nav bar. The nav buttons quickly scroll users to relevant sections which may be offscreen and facilitates bookmarking.
+   * Nav buttons include hover highlighting for UX/aesthetic considerations. 
+   * Logo line spacing shrinks as well as nav buttons change from text to icons at smaller sizes.
 
   
   ![Large Header](docs/readme-images/header-wide.png)
@@ -95,18 +97,18 @@ __3.__  The Final Grade Calculator itself, with two display modes depending on s
   ![Large Size Final Grade Calculator](docs/readme-images/grade-calc-table-wide.png)
   ![Small Size Final Grade Calculator](docs/readme-images/grade-calc-table-small.png)
 
-  * Selectable grades for each project, which when changed will live update the Total Points (on each row, and final total) as well as the displayed Final Result Grade
+  * Selectable grades for each project, which when changed will live update the total points (on each row, and final total) as well as the displayed Final Result Grade
 
   ![Selectable grades](docs/readme-images/selector-click-small.png)
 
-  * Large/Main Table Mode for Large Screens with potential grades selectable
+  * Large/Main table mode for large screens with potential grades selectable
   * Truncated table with less padding space and removed least important columns. These are hidden with CSS media queries and classes for narrow screen sizes.
 
 __4.__ The Calculator will also be controllable by 4 different selections of randomisation which will be:
-  * Totally Random Grade Selection 
-  * Randomly selected results bounded by only combinations that result in a Final Pass Grade
-  * Randomly selected results bounded by only combinations that result in a Final merit Grade
-  * Randomly selected results bounded by only combinations that result in a Final distinction Grade
+  * Totally random grade selection.
+  * Randomly selected results bounded by only combinations that result in a Final Pass Grade.
+  * Randomly selected results bounded by only combinations that result in a Final Merit Grade.
+  * Randomly selected results bounded by only combinations that result in a Final Distinction Grade.
 
   ![Random Buttons](docs/readme-images/randomise-buttons.png)
 
@@ -115,8 +117,8 @@ __4.__ The Calculator will also be controllable by 4 different selections of ran
   * These buttons (as well as the above modal button) have been styled with a pleasing 3d effect which seems to press down when clicked.
 
 __5.__ About/Useful Links Page/Contact Form
-  * Links to pre-existing Days Until calculator (originally planned to be constructed from scratch on this site, but scope creep was reigned in since this functionality has been done many times before.)
-  * Other Useful Links such as to Code Institute Website / Useful Subreddits etc.
+  * Links to pre-existing "Days Until" calculator (originally planned to be constructed from scratch on this site, but scope creep was reigned-in since this functionality has been done many times before.)
+  * Other useful links such as to Code Institute Website / Useful Subreddits etc.
   * All links highlight appropriately when hovered.
 
     ![Useful Links Section](docs/readme-images/useful-links-wide.png)
@@ -131,25 +133,41 @@ __6.__  A footer area at the bottom of the site featuring links to other relevan
 
 ### __Technology Used__
 
-1.  HTML                Used to build the markup structure of the site.                  
-2.  CSS                 Used to provide both global and targeted styling to the HTML
-3.  Javascript          Used to provide site interactivity.    
-4.  GitHub              Used as a repository for the project                        https://github.com/
-5.  GitPod              Used as the VDE of the project.                             https://www.gitpod.io/
-6.  Firefox             Used as the main browser of the project (Browsing, Editing, Dev Tools, Screenshot capabilities)     https://www.mozilla.org/en-US/firefox/new/
-7.  Chrome              Used as alt browser of the project (Testing, Dev Tools)             https://www.google.com/intl/en_ie/chrome/
-8.  Grammarly           Used to proof this page.                                            https://app.grammarly.com
-9.  FontAwesome         Source of nav icons used in the website.                                https://fontawesome.com/
-10. Google Fonts        Source of fonts used in the site                                    https://fonts.google.com/specimen/Barlow#styles
-11. Coolors             Color Palette Generator used in planning                            https://coolors.co/ea7600-ececec-717575-ffc180-ffffff
-12. MSPaint             For rapid cropping of screenshot images for readme
-13. WordCounter         For assistance staying under 50 chars recommended git commit length   https://wordcounter.net/character-count
-14. Chrome Lighthouse Test  For additional site validation (Accessibility, SEO, etc)
-15. Cssgradient         Used to generate the gradient used as the modal overlay             https://cssgradient.io/
-16. Microsoft Edge      Used as the tertiary testing browser.
+1.  HTML                
+Used to build the markup structure of the site.                  
+2.  CSS                 
+Used to provide both global and targeted styling to the HTML
+3.  Javascript          
+Used to provide site interactivity.    
+4.  GitHub              
+Used as a repository for the project                        https://github.com/
+5.  GitPod              
+Used as the VDE of the project.                             https://www.gitpod.io/
+6.  Firefox             
+Used as the main browser of the project (Browsing, Editing, Dev Tools, Screenshot capabilities)     https://www.mozilla.org/en-US/firefox/new/
+7.  Chrome              
+Used as alt browser of the project (Testing, Dev Tools)             https://www.google.com/intl/en_ie/chrome/
+8.  Grammarly           
+Used to proof this page.                                            https://app.grammarly.com
+9.  FontAwesome         
+Source of nav icons used in the website.                                https://fontawesome.com/
+10. Google Fonts        
+Source of fonts used in the site                                    https://fonts.google.com/specimen/Barlow#styles
+11. Coolors             
+Color Palette Generator used in planning                            https://coolors.co/ea7600-ececec-717575-ffc180-ffffff
+12. MSPaint             
+For rapid cropping of screenshot images for readme
+13. WordCounter         
+For assistance staying under 50 chars recommended git commit length   https://wordcounter.net/character-count
+14. Chrome Lighthouse Test  
+For additional site validation (Accessibility, SEO, etc)
+15. Cssgradient         
+Used to generate the gradient used as the modal overlay             https://cssgradient.io/
+16. Microsoft Edge      
+Used as the tertiary testing browser.
 
 ### __Possible Future Features to Implement__
-Ideas for future possible Features include;
+Ideas for future possible features include;
 
 __1.__ A page or section to enter your email on the website and have the website email you a formatted version of the currently selected projected grades, for those who want a static saved version for reference. Perhaps this could be outputted instead as a text-based ASCII table in an expandable section/modal, for easy copy-pasting.
 
@@ -184,11 +202,11 @@ This application was tested primarily tested using;
 
 The application was tested with:
 
-Up-to-date Firefox (Windows 10 ver 109.0 Firefox Release January 17, 2023) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to less than 400px emulating Pixel 5 and free responsiveness mode to go to less than 280px wide. Using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
+Up-to-date Firefox (Windows 10 ver 109.0 Firefox Release January 17, 2023) - Using Dev Tools to inspect all elements of the site, using responsiveness mode to test down to less than 400px emulating Pixel 5 and free responsiveness mode to go to less than 280px wide. Using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
 
-Up-to-date Chrome (Windows 10 Version 109.0.5414.120 (Official Build) (64-bit)) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide. Occasionally using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
+Up-to-date Chrome (Windows 10 Version 109.0.5414.120 (Official Build) (64-bit)) - Using Dev Tools to inspect all elements of the site, using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide. Occasionally using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
 
-Up-to-date Edge browser (Windows 10 Version 109.0.1518.61 (Official Build) (64-bit)) - Using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide.
+Up-to-date Edge browser (Windows 10 Version 109.0.1518.61 (Official Build) (64-bit)) - Using responsiveness mode to test down to 280px emulating Galaxy Fold extremely small screen size and free responsiveness mode to go to less than 280px wide.
 
 ### __Validator Testing__
 No error displaying with w3 HTML validator
@@ -202,7 +220,7 @@ __Javascript__
 
 Two warnings were found:
 38  Do not use 'new' for side effects.
-187 Do not use 'new' for side effects
+187 Do not use 'new' for side effects.
 
 These relate to the use of Constructors in a forEach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be initialized once to complete the unique ID setup process, it was deemed unnecessary by the developer to create a system to save each new instance as a separate variable before passing it to the overarching forEach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have led to unnecessary complexity.
 
