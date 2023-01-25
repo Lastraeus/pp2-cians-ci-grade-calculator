@@ -7,14 +7,14 @@
 ## __Purpose of the Project__
 To create a website that allows Code Institute students (studying the Full Stack Development Course) to simulate what Final Grade they might get by either manually inputting potential Project Grades, or randomly generating possible grades (In various configurations) to generate a corresponding Final Grade. 
 
-Additional Useful information can be provided to the user such as a breakdown of what each project is worth and links to pre-existing “Days until” calculators(to see time left before deadlines in a more practical format) and other useful websites.
+Additional Useful information can be provided to the user such as a breakdown of what each project is worth and links to pre-existing “Days until” calculators(to see the time left before deadlines in a more practical format) and other useful websites.
 
 ## __Research__
 __Understanding the Target Problem__
 
-The below image is from a snippet of the assesment rules copied from the Official Assessement guide for the course, found in the Code Institute website learning enviroment.
+The below image is from a snippet of the assessment rules copied from the Official assessment guide for the course, found in the Code Institute website learning environment.
 
-By understanding the various components of the final grade calculation and bearing them in mind, this focused the project on automating the calculation process and allowing rapid simulation of different grade combinations and their final grade outcomes.
+Understanding the various components of the final grade calculation and bearing them in mind, allowed me to focus the project on automating the calculation process and allowing rapid simulation of different grade combinations and their final grade outcomes.
 
 ![Official Calculation Weights and rules](docs/readme-images/target-rules-from-official-assessment-guide.png)
 
@@ -24,17 +24,17 @@ __Audience Needs/Stories__
 
 “I’d love to see a clearer breakdown of how my previous projects have impacted my potential final grade.”
 
-"Having to manually calculate your past grades and potential future ones can be difficult/tedious and time consuming, especially to repeat for different combinations"
+"Having to manually calculate your past grades and potential future ones can be difficult/tedious and time-consuming, especially to repeat for different combinations"
 
 __Search For Similar Sites__
 
 I inspected some websites found on google searches for possible similar projects/solutions I might not have thought of but the calculators I found were suited instead to other types of systems and courses.
-* [Link to a innapropriate Final Grade Calculator which is based off both percentages & Letter Grades](https://www.rapidtables.com/calc/grade/final-grade-calculator.html)
+* [Link to an inappropriate Final Grade Calculator which is based on both percentages & Letter Grades](https://www.rapidtables.com/calc/grade/final-grade-calculator.html)
 
-I had interest in developing additional site functionality non-specific to this course, such as a day's until calculator but this proved to be a exceptionally well trodden road and I narrowed down the project scope to the unsolved problem of the Code Institute grade calculator, and simply link to a existing Day's until calculator instead of re-inventing the wheel.
+I had an interest in developing additional site functionality non-specific to this course, such as a day's until calculator but this proved to be an exceptionally well-trodden road and I narrowed down the project scope to the unsolved problem of the Code Institute grade calculator, and simply link to an existing "Days until calculator" instead of re-inventing the wheel.
 
 ## __Planning__
-I initially planned a version of the calculator page for both desktop and mobile sizes as well as a potential seconday page to add "days until X date" functionality.
+I initially planned a version of the calculator page for both desktop and mobile sizes as well as a potential secondary page to add the "days until X date" functionality.
 
   ![Large Calculator Wireframe](docs/readme-images/wireframe-main-calc-page-desktop.png)
 
@@ -42,61 +42,61 @@ I initially planned a version of the calculator page for both desktop and mobile
 
   ![Large Calculator Wireframe](docs/readme-images/wireframe-potential-days-until-calculator-desktop.png)
 
-As the project developed the secondary page was decided to be beyond project scope (and was well trodden functionality available elsewhere to a high standard), and the implementation of the Grade Table and other elements resulted in a less drastic differance between the layout needed for the mobile size version.
+As the project developed the secondary page was decided to be beyond project scope (and was well-trodden functionality available elsewhere to a high standard), and the implementation of the Grade Table and other elements resulted in a less drastic difference between the layout needed for the mobile size version.
 
 The secondary page was then added instead as a useful links section under the calculator.
 
 ### __Color Scheme__
-A lighter color scheme was developed for the site featuring Orange (my favourite color!). It featured; a bold orange base background, light grey content boxes, dark grey text, apricot(light orange/beige) for certain highlighting and white for some large text.
+A lighter color scheme was developed for the site featuring Orange (my favorite color!). It featured; a bold orange base background, light grey content boxes, dark grey text, apricot(light orange/beige) for certain highlighting, and white for some large text.
 
-This was used throughout project development as a guide to the color styling.
+This was used throughout project development as a guide to color styling.
 
   ![Coolor Website palette](docs/readme-images/coolors-color-palette.png)
 
 ### __Font Choice__
-
+Barlow and Asap were chosen from https://fonts.google.com/ as title and main text fonts, due to their clean solid look.
 
 ## __Features__
-A single page website featuring:
+A single-page website featuring:
 
-__1.__	A title, Nav Bar and into blurb for the site. Responsive down to extremely small sizes.
+__1.__  A title, Nav Bar, and intro blurb for the site. Responsive down to extremely small sizes.
 
-   *	Responsive Main Logo and nav bar. The Nav Buttons quickly scrolls users to relevant sections which may be offscreen and facilitates bookmarking.) Nav buttons include hover highlighting for UX/asthetic considerations. Logo line spacing shrinks as well as Nav Buttons change from text to icons at smaller sizes.
+   *  Responsive Main Logo and nav bar. The Nav Buttons quickly scroll users to relevant sections which may be offscreen and facilitates bookmarking.) Nav buttons include hover highlighting for UX/aesthetic considerations. Logo line spacing shrinks as well as Nav Buttons change from text to icons at smaller sizes.
 
   
   ![Large Header](docs/readme-images/header-wide.png)
 
   ![Small Header](docs/readme-images/header-narrow.png)
 
-  *	A blurb featuring information about the calculator’s purpose and functionality.
+  * A blurb featuring information about the calculator’s purpose and functionality.
 
   ![Intro Blurb](docs/readme-images/intro-blurb.png)
 
-__2.__ An expandable modal opened with a button containing the official calculation weights and rules explanation, used by the calander, and for general refference. This modal features:
+__2.__ An expandable modal opened with a button containing the official calculation weights and rules explanation, used by the calculator, and for general reference. This modal features:
 
-  *	A button to open the modal.
+  * A button to open the modal.
   ![Modal Button](docs/readme-images/modal-button.png)
   
-  *	Responsive sizeing to display information on all screen sizes in a clear way.
-  *	A overlay to focus the user on the newly displayed information and a opacity to encourage the user to realize they can click the overlay area to get back to the site behind. (Clicking the overlay closes the modal)
-  *	A specifc "X" to close the modal in it's title as the obvious choice of closing the modal.
-  *	A scroll function built into the modal if the screensize is too small to display all content.
+  * Responsive sizing to display all information on all screen sizes.
+  * A overlay to focus the user on the newly displayed information and opacity to encourage the user to realize they can click the overlay area to get back to the site behind. (Clicking the overlay closes the modal)
+  * A specific "X" to close the modal in its title is the obvious choice for most users of closing the modal.
+  * A scroll function built into the modal if the screen size is too small to display all content.
 
   ![Large Size Modal](docs/readme-images/modal-large.png)
   ![Small Size Modal](docs/readme-images/modal-small.png)
   ![Small Size Modal Scrolled down](docs/readme-images/modal-small-scrolled.png)
 
-__3.__	The Final Grade Calculator itself, with two display modes depending on screen size.
+__3.__  The Final Grade Calculator itself, with two display modes depending on screen size.
 
   ![Large Size Final Grade Calculator](docs/readme-images/grade-calc-table-wide.png)
   ![Small Size Final Grade Calculator](docs/readme-images/grade-calc-table-small.png)
 
-  *	Selectable grades for each project, which when changed will live update the Total Points (on each row, and final total) as well as the displayed Final Result Grade
+  * Selectable grades for each project, which when changed will live update the Total Points (on each row, and final total) as well as the displayed Final Result Grade
 
   ![Selectable grades](docs/readme-images/selector-click-small.png)
 
-  *	Large/Main Table Mode for Large Screens with potential grades selectable
-  *	Truncated table with less padding space and removed least important columns. These are hidden with css media queries and classes for narrow screen sizes.
+  * Large/Main Table Mode for Large Screens with potential grades selectable
+  * Truncated table with less padding space and removed least important columns. These are hidden with CSS media queries and classes for narrow screen sizes.
 
 __4.__ The Calculator will also be controllable by 4 different selections of randomisation which will be:
   * Totally Random Grade Selection 
@@ -108,7 +108,7 @@ __4.__ The Calculator will also be controllable by 4 different selections of ran
 
 
 
-  * These buttons (as well as the above modal button) have been styled with a pleasing 3d effect which seem to press down when clicked.
+  * These buttons (as well as the above modal button) have been styled with a pleasing 3d effect which seems to press down when clicked.
 
 __5.__ About/Useful Links Page/Contact Form
   * Links to pre-existing Days Until calculator (originally planned to be constructed from scratch on this site, but scope creep was reigned in since this functionality has been done many times before.)
@@ -118,36 +118,36 @@ __5.__ About/Useful Links Page/Contact Form
     ![Useful Links Section](docs/readme-images/useful-links-wide.png)
 
   
-__6.__	A footer area at the bottom of the site with featuring links to other relevant websites made by this sites creator. Looks clean and unintrusive, but clear when read. These include:
+__6.__  A footer area at the bottom of the site featuring links to other relevant websites made by this site's creator. Looks clean and unintrusive, but clear when read. These include:
 
-  * A logo link to the project creator's github page.
-  * A logo link to the projects's actual Twitter page for any updates that fans of the site may wish to follow.
-  * A logo link to the projects's actual Youtube page for any videos that the site creator may make in relation to this project (Usage tutorials, other tips etc) that fans of the site may be interested in.
-  * A attribution link required by the source of the favicon used in the site.
+  * A logo link to the project creator's GitHub page.
+  * A logo link to the projects' actual Twitter page for any updates that fans of the site may wish to follow.
+  * A logo link to the projects' actual Youtube page for any videos that the site creator may make concerning this project (Usage tutorials, other tips, etc) that fans of the site may be interested in.
+  * A attribution link is required by the source of the favicon used in the site.
 
 ### __Technology Used__
 
-1.  HTML                Used to build markup stucture of the site.                  
-2.  CSS                 Used to provide both global and targated styling to the HTML
+1.  HTML                Used to build the markup structure of the site.                  
+2.  CSS                 Used to provide both global and targeted styling to the HTML
 3.  Javascript          Used to provide site interactivity.    
 4.  GitHub              Used as a repository for the project                        https://github.com/
 5.  GitPod              Used as the VDE of the project.                             https://www.gitpod.io/
-6.  Firefox             Used as main browser of the project (Browsing, Editing, Dev Tools, Screenshot capablilites)     https://www.mozilla.org/en-US/firefox/new/
+6.  Firefox             Used as the main browser of the project (Browsing, Editing, Dev Tools, Screenshot capabilities)     https://www.mozilla.org/en-US/firefox/new/
 7.  Chrome              Used as alt browser of the project (Testing, Dev Tools)             https://www.google.com/intl/en_ie/chrome/
 8.  Grammarly           Used to proof this page.                                            https://app.grammarly.com
-9.  FontAwesome         Source of nav icons used in website.                                https://fontawesome.com/
+9.  FontAwesome         Source of nav icons used in the website.                                https://fontawesome.com/
 10. Google Fonts        Source of fonts used in the site                                    https://fonts.google.com/specimen/Barlow#styles
 11. Coolors             Color Palette Generator used in planning                            https://coolors.co/ea7600-ececec-717575-ffc180-ffffff
-12. MsPaint             For rapid cropping of screenshot images for readme
-13. WordCounter         For assitance staying under 50 char recommended git commit length   https://wordcounter.net/character-count
-14. Chrome Lighthouse Test  For additional site validation (Accessability, SEO etc)
+12. MSPaint             For rapid cropping of screenshot images for readme
+13. WordCounter         For assistance staying under 50 chars recommended git commit length   https://wordcounter.net/character-count
+14. Chrome Lighthouse Test  For additional site validation (Accessibility, SEO, etc)
 15. Cssgradient         Used to generate the gradient used as the modal overlay             https://cssgradient.io/
-16. Microsoft Edge      Used as tertiary testing browser.
+16. Microsoft Edge      Used as the tertiary testing browser.
 
 ### __Possible Future Features to Implement__
 Ideas for future possible Features include;
 
-__1.__ A page or section to enter your email on the webiste and have the website email you a formatted version of the currently selected projected grades, for those who want a static saved version for reference. Perhaps this could be outputted instead as a text based ASCII table in a expandable section/modal, for easy copy pasting.
+__1.__ A page or section to enter your email on the website and have the website email you a formatted version of the currently selected projected grades, for those who want a static saved version for reference. Perhaps this could be outputted instead as a text-based ASCII table in an expandable section/modal, for easy copy-pasting.
 
 __2.__ A homebrew "days until calculator" that allows students to input their upcoming project dates (Potentially all 5 at once) and see the remaining time between and until each project. This information could be displayed in multiple (selectable?) formats.
 
@@ -163,9 +163,9 @@ I would then test to see that changes reflected design intent. (IE check newly a
 Resizing browser with CTRL-SHIFT-M on firefox to see responsive-design-mode. Checked down to sub 280px (Galaxy Fold). Resized in Chrome Dev Tools CTRL-SHIFT-I. Checked down to sub 280px (galaxy fold)
 Resized in Edge Dev Tools. Checked down to sub 280px (galaxy fold)
 
-Inspecting any unexpected or hard-to-diagnose bugs with the inspect source feature in firefox/chrome. Tweaking variables with Chrome Dev tools to see changes live and help diagnose problem.
+Inspecting any unexpected or hard-to-diagnose bugs with the inspect source feature in firefox/chrome. Tweaking variables with Chrome Dev tools to see changes live and help diagnose the problem.
 
-The result of testing each and every part of the site was deemed satisfactory when user received:
+The result of testing each and every part of the site was deemed satisfactory when the user received:
     - confirmation that the site layout is as the design intended. 
     - confirmation that the site features are fully functional. 
     - confirmation that the site layout adapts as designed dynamically based on the screen size.
@@ -180,51 +180,51 @@ This application was tested primarily tested using;
 
 The application was tested with:
 
-Up to date Firefox (Windows 10 ver 109.0 Firefox Release January 17, 2023) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to less than 400px emulating Pixel 5 and free responsiveness mode to go to less than 280px wide. Using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
+Up-to-date Firefox (Windows 10 ver 109.0 Firefox Release January 17, 2023) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to less than 400px emulating Pixel 5 and free responsiveness mode to go to less than 280px wide. Using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
 
-Up to date Chrome (Windows 10 Version 109.0.5414.120 (Official Build) (64-bit)) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide. Occasionally using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
+Up-to-date Chrome (Windows 10 Version 109.0.5414.120 (Official Build) (64-bit)) - Using Dev tools to inspect all elements of the site, using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide. Occasionally using the console to detect any errors and to diagnose problem variables or states by adding console.log() commands to my javascript scripts when needed.
 
-Up to date Edge browser (Windows 10 Version 109.0.1518.61 (Official build) (64-bit)) - Using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide.
-
-
+Up-to-date Edge browser (Windows 10 Version 109.0.1518.61 (Official Build) (64-bit)) - Using responsiveness mode to test down to 280px emulating Galaxy fold extremely small screen size and free responsiveness mode to go to less than 280px wide.
 
 ### __Validator Testing__
 No error displaying with w3 HTML validator
 https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Flastraeus.github.io%2Fpp2-cians-ci-grade-calculator%2F
 
 __CSS__
-No error found with https://jigsaw.w3.org/css-validator/validator (manual input of style.css content)
+No error was found with https://jigsaw.w3.org/css-validator/validator (manual input of style.css content)
 
 __Javascript__
  __https://jshint.com/ JS validator (Manual input of script.js)__
 
 Two warnings were found:
-38	Do not use 'new' for side effects.
-187	Do not use 'new' for side effects
+38  Do not use 'new' for side effects.
+187 Do not use 'new' for side effects
 
-These relate to the use of Constructors in a forEach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be intialized once to complete the unique ID setup process, it was deemed unnessary by the developer to create a system to save each individual new instance as a seperate variable before passing it to the overarching foreach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have lead to unnecessary complexity.
+These relate to the use of Constructors in a forEach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be initialized once to complete the unique ID setup process, it was deemed unnecessary by the developer to create a system to save each new instance as a separate variable before passing it to the overarching forEach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have led to unnecessary complexity.
 
  __https://jshint.com/ JS validator (Manual input of modal-script.js)__
 
- No errors found.
+ No errors were found.
 
 __Chrome Lighthouse Test__
+
 ![Useful Links Section](docs/readme-images/lighthouse-rating.png)
+
 I ran the chrome lighthouse test on the site and received extremely high scores.
 
 ### __Bugs Encountered__
  __1.__ 
 
-    When developing the live updating table with grade column selector options, I initially set up the script.js so that a foreach was run on each of the selector elements and would add a listener to each that updated the table values on that row to match the new selected option. 
-    This led to a bug where the same listener was applied to each selector(in each row) simultaneously. After some research I developed a object-orientated part of the system using classes to construct individual objects for each selector based on their unique ID attributes, and used that set up unique listeners within the class, so each specific selector now would only affect the intended row.
+    When developing the live updating table with grade column selector options, I initially set up the script.js so that a forEach was run on each of the selector elements and would add a listener to each that updated the table values on that row to match the newly selected option. 
+    This led to a bug where the same listener was applied to each selector(in each row) simultaneously. After some research I developed an object-orientated part of the system using classes to construct individual objects for each selector based on their unique ID attributes and used that to set up unique listeners within the class, so each specific selector now would only affect the intended row.
 
-    This issue came up again when developing the randomiser buttons, as each needed a unique listener to pass the correct value to the randomiseResults() function. This was solved with the same methodology as above, constructing unique id-attribute based objects for each that created seperate listeners for each button.
+    This issue came up again when developing the randomiser buttons, as each needed a unique listener to pass the correct value to the randomiseResults() function. This was solved with the same methodology as above, constructing unique id-attribute-based objects for each that created separate listeners for each button.
  
  __2.__ 
 
-    When I was adding the (previously freestanding) "Total Points/final results" row to the end of the grade calc table, I encountered a bug where the cell in question where the Total Points/final results were to be inserted was throwing a undefined/adding an "error" code from my function cases instead of the previously functional insert into the previously freestanding results spans.
+    When I was adding the (previously freestanding) "Total Points/final results" row to the end of the grade calc table, I encountered a bug where the cell in question where the Total Points/final results were to be inserted was throwing an undefined/adding an "error" code from my function cases instead of the previously functional insert into the previously freestanding results spans.
 
-    I realized then that this was due to the selectors for all values to be calculated was stored as variables that queryselected all available rows for use in calculation arrays.
+    I realized then that this was due to the selectors for all values to be calculated being stored as variables that queryselected all available rows for use in calculation arrays.
 
     I solved this by researching how to limit the querSelectorAll selectors to only look for the first 5 rows(For each project line) leaving the total/final row out of the calculations.  Using the following updated variables;
 
@@ -233,15 +233,14 @@ I ran the chrome lighthouse test on the site and received extremely high scores.
 
  __3.__ 
 
-    I noticed that despite showing in my gitpod live python3 testing server site, that the favicon I added wasn't displaying on Github pages. I found
+    I noticed that despite showing in my gitpod live python3 testing server site, the favicon I added wasn't displaying on Github pages. I found
   [This article](https://sneha-herle.medium.com/favicon-working-on-localhost-but-not-on-github-pages-6c7b9e947504) 
     
-    discussing the issue, and implemented the suggested line of code into my index.html file and pushed it to github. This resolved the issue.
-
+    discussing the issue, implemented the suggested line of code into my index.html file, and pushed it to Git Hub. This resolved the issue.
 
 
 ### __Unfixed Bugs__
-Other than the above described jshint.com warnings about my use of new constructors as a "side effect" of a function, which I believed to be justified in these instances, I am not aware of any outstanding bugs.
+Other than the above-described jshint.com warnings about my use of new constructors as a "side effect" of a function, which I believed to be justified in these instances, I am not aware of any outstanding bugs.
 
 ## __Deployment__
 The site was developed using Gitpods Browser Workspace. This was done by:
@@ -267,13 +266,13 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 ### __Content__
 __Text Content__
 
-Core weighting, rules, project names etc were directly as per the codeinstitute.net Official Assessment Guide for the Full Stack Development Higher Diploma course.
+Core weighting, rules, project names, etc were directly quoted from the codeinstitute.net Official Assessment Guide for the Full Stack Development Higher Diploma course.
 
-All other content text was written by myself.
+All other main content/blurb text was written by myself.
 
 __Code__
 
-Rohit Sharma - My Code Institute Project Mentor - Numerous valuable insights into formatting, refactoring, commenting tips and general critique and advice for the project across almost all aspects. His contribution can't be understated and I am extremely lucky to having a mentor who constantly encourages me to improve my fundamentals as a developer. My managing to fully implement barely half his advice is the reason this project is twice as good as it would have been.
+Rohit Sharma - My Code Institute Project Mentor - Numerous valuable insights into formatting, refactoring, commenting tips, and general critique and advice for the project across almost all aspects. His contribution can't be understated and I am extremely lucky to have a mentor who constantly encourages me to improve my fundamentals as a developer. My managing to fully implement barely half of his advice is the reason this project is twice as good as it would have been.
 
 [Switch Statement Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 
@@ -281,23 +280,23 @@ Rohit Sharma - My Code Institute Project Mentor - Numerous valuable insights int
 
 [How I summed the array of total points](https://reqbin.com/code/javascript/m81eb1ms/javascript-sum-array-example)
 
-While learning about reading selectors from various sources (below) I did not find a solution to the problem I was having applying unique listeners to multiple selector inputs. After learning more on selectors in general I came to the conclusion that I needed a object orientated solution to avoid masses of duplicated code for my purposes. This ended up also applying to the randomiser buttons.
+While learning about reading selectors from various sources (below) I did not find a solution to the problem I was having applying unique listeners to multiple selector inputs. After learning more about selectors in general I concluded that I needed an object-orientated solution to avoid masses of duplicated code for my purposes. This ended up also applying to the randomiser buttons.
 
 [Selector Reference#1](https://stackoverflow.com/questions/10911526/how-do-i-programatically-select-an-html-option-using-javascript)
 
 [Selector Reference#2](https://www.youtube.com/watch?v=kzFJ7St_ma8)
 
-I then combined my understanding of classes and constructors, [helped by this reference video](https://www.youtube.com/watch?v=5AWRivBk0Gw) and trial and error to develop the currently in use solution.
+I then combined my understanding of classes and constructors, [helped by this reference video](https://www.youtube.com/watch?v=5AWRivBk0Gw) and trial and error to develop the currently in-use solution.
 
 [Guide to make the 3d buttons used on the site](https://www.youtube.com/watch?v=cWeWnO8XKds)
 
-[First of Two main guides on Modals I used](https://www.youtube.com/watch?v=MBaw_6cPmAw)
+[First, of Two main guides on Modals I used](https://www.youtube.com/watch?v=MBaw_6cPmAw)
 
 [Second of Two main guides on Modals I used (source of the gradient fill idea)](https://www.youtube.com/watch?v=TAB_v6yBXIE)
 
 [Modal scrolling discussion](https://stackoverflow.com/questions/10476632/how-to-scroll-the-page-when-a-modal-dialog-is-longer-than-the-screen)
 
-[Guide on how to style tables that I leaned on heavily for my own grade calc table](https://www.youtube.com/watch?v=biI9OFH6Nmg)
+[Guide on how to style tables that I leaned on heavily for my grade calc table](https://www.youtube.com/watch?v=biI9OFH6Nmg)
 
 [General Responsiveness Tips 1](https://youtu.be/TUD1AWZVgQ8)
 
@@ -311,7 +310,7 @@ I then combined my understanding of classes and constructors, [helped by this re
 
 __Colors__
 
-[Coolors.co Color Palett Generator](https://coolors.co/ea7600-ececec-717575-ffc180-ffffff)
+[Coolors.co Color Palette Generator](https://coolors.co/ea7600-ececec-717575-ffc180-ffffff)
 
 [Color Palett Inspiration](https://icolorpalette.com/download/palette/443988_color_palette.jpg)
 
