@@ -18,7 +18,7 @@ By understanding the various components of the final grade calculation and beari
 
 ![Official Calculation Weights and rules](docs/readme-images/target-rules-from-official-assessment-guide.png)
 
-__Audience Needs__
+__Audience Needs/Stories__
 
 “It can be difficult to figure out how much each project grade impacts the final grade at the end of the course”
 
@@ -52,6 +52,9 @@ A lighter color scheme was developed for the site featuring Orange (my favourite
 This was used throughout project development as a guide to the color styling.
 
   ![Coolor Website palette](docs/readme-images/coolors-color-palette.png)
+
+### __Font Choice__
+
 
 ## __Features__
 A single page website featuring:
@@ -130,12 +133,16 @@ __6.__	A footer area at the bottom of the site with featuring links to other rel
 4.  GitHub              Used as a repository for the project                        https://github.com/
 5.  GitPod              Used as the VDE of the project.                             https://www.gitpod.io/
 6.  Firefox             Used as main browser of the project (Browsing, Editing, Dev Tools, Screenshot capablilites)     https://www.mozilla.org/en-US/firefox/new/
-7.  Chrome              Used as alt browser of the project (Testing, Dev Tools)     https://www.google.com/intl/en_ie/chrome/
-8.  Grammarly           Used to proof this page.                                    https://app.grammarly.com
-9.  FontAwesome         Source of fonts used in website.                            https://fontawesome.com/
-10. Coolors             Color Palette Generator used in planning                    https://coolors.co/ea7600-ececec-717575-ffc180-ffffff
-11. MsPaint             For rapid cropping of screenshot images for readme
-11. WordCounter         For assitance staying under 50 char recommended git commit length  https://wordcounter.net/character-count
+7.  Chrome              Used as alt browser of the project (Testing, Dev Tools)             https://www.google.com/intl/en_ie/chrome/
+8.  Grammarly           Used to proof this page.                                            https://app.grammarly.com
+9.  FontAwesome         Source of nav icons used in website.                                https://fontawesome.com/
+10. Google Fonts        Source of fonts used in the site                                    https://fonts.google.com/specimen/Barlow#styles
+11. Coolors             Color Palette Generator used in planning                            https://coolors.co/ea7600-ececec-717575-ffc180-ffffff
+12. MsPaint             For rapid cropping of screenshot images for readme
+13. WordCounter         For assitance staying under 50 char recommended git commit length   https://wordcounter.net/character-count
+14. Chrome Lighthouse Test  For additional site validation (Accessability, SEO etc)
+15. Cssgradient         Used to generate the gradient used as the modal overlay             https://cssgradient.io/
+16. Microsoft Edge      Used as tertiary testing browser.
 
 ### __Possible Future Features to Implement__
 Ideas for future possible Features include;
@@ -182,7 +189,6 @@ Up to date Edge browser (Windows 10 Version 109.0.1518.61 (Official build) (64-b
 
 
 ### __Validator Testing__
-__HTML__
 No error displaying with w3 HTML validator
 https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Flastraeus.github.io%2Fpp2-cians-ci-grade-calculator%2F
 
@@ -196,11 +202,15 @@ Two warnings were found:
 38	Do not use 'new' for side effects.
 187	Do not use 'new' for side effects
 
-These relate to the use of Constructors in a foreach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be intialized once to complete the unique ID setup process, it was deemed unnessary by the developer to create a system to save each individual new instance as a seperate variable before passing it to the overarching foreach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have lead to unnecessary complexity.
+These relate to the use of Constructors in a forEach function to add unique click/select listeners to each randomiser button/selector option, to enable the live updating functionality of specific grades. Since these objects just need to be intialized once to complete the unique ID setup process, it was deemed unnessary by the developer to create a system to save each individual new instance as a seperate variable before passing it to the overarching foreach function in readTableGradeAfterChange() and initializeRandomButtons(). The developer believes this would have lead to unnecessary complexity.
 
  __https://jshint.com/ JS validator (Manual input of modal-script.js)__
 
  No errors found.
+
+__Chrome Lighthouse Test__
+![Useful Links Section](docs/readme-images/lighthouse-rating.png)
+I ran the chrome lighthouse test on the site and received extremely high scores.
 
 ### __Bugs Encountered__
  __1.__ 
@@ -255,6 +265,12 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 ## __Credits__
 ### __Content__
+__Text Content__
+
+Core weighting, rules, project names etc were directly as per the codeinstitute.net Official Assessment Guide for the Full Stack Development Higher Diploma course.
+
+All other content text was written by myself.
+
 __Code__
 
 Rohit Sharma - My Code Institute Project Mentor - Numerous valuable insights into formatting, refactoring, commenting tips and general critique and advice for the project across almost all aspects. His contribution can't be understated and I am extremely lucky to having a mentor who constantly encourages me to improve my fundamentals as a developer. My managing to fully implement barely half his advice is the reason this project is twice as good as it would have been.
@@ -265,13 +281,13 @@ Rohit Sharma - My Code Institute Project Mentor - Numerous valuable insights int
 
 [How I summed the array of total points](https://reqbin.com/code/javascript/m81eb1ms/javascript-sum-array-example)
 
-While learning about reading selectors from various sources (below) I did not find a solution to the problem I was having applying unique listeners to multiple selector inputs. After learning more on selectors in general I came to the conclusion myself that I needed a object orientated solution to avoid masses of duplicated code for my purposes. This ended up also applying to the randomiser buttons.
+While learning about reading selectors from various sources (below) I did not find a solution to the problem I was having applying unique listeners to multiple selector inputs. After learning more on selectors in general I came to the conclusion that I needed a object orientated solution to avoid masses of duplicated code for my purposes. This ended up also applying to the randomiser buttons.
 
 [Selector Reference#1](https://stackoverflow.com/questions/10911526/how-do-i-programatically-select-an-html-option-using-javascript)
 
 [Selector Reference#2](https://www.youtube.com/watch?v=kzFJ7St_ma8)
 
-I then combined my own understanding of classes and constructors, [reference for same](https://www.youtube.com/watch?v=5AWRivBk0Gw) and trial and error to develop the currently in use solution.
+I then combined my understanding of classes and constructors, [helped by this reference video](https://www.youtube.com/watch?v=5AWRivBk0Gw) and trial and error to develop the currently in use solution.
 
 [Guide to make the 3d buttons used on the site](https://www.youtube.com/watch?v=cWeWnO8XKds)
 
